@@ -41,7 +41,7 @@ class AllCommands {
         }
 
         fun exit() {
-            exitProcess(0)
+
         }
 
         fun removeFirst() {
