@@ -7,7 +7,9 @@ import DataSet.*
 
 class WorkWithCollection: CollectionMainCommands {
 
-    var priorityQueueCollection = PriorityQueue<Route>()
+      companion object{
+          var priorityQueueCollection = PriorityQueue<Route>()
+      }
 
     override fun getCollection(): PriorityQueue<Route> {
         return priorityQueueCollection

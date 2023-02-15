@@ -1,7 +1,27 @@
 package WorkCommandsList
 
+import java.util.*;
+import Controllers.WorkWithCollection
+import UsersView.AnswerToUser
+
 class Show: Command {
     override fun execute(str: String) {
-        println("shw")
+
+        val workWithCollection: WorkWithCollection = WorkWithCollection()
+        val answerToUser: AnswerToUser = AnswerToUser()
+
+        val collection = workWithCollection.getCollection()
+
+        if (collection.size == 0){
+            answerToUser.writeToConsoleLn("Коллекция пуста")
+        }else if(collection.size == 1){
+            answerToUser.writeToConsoleLn("Name: ${collection.peek().name}")
+        }else{
+            for (i in 0..collection.size - 1){
+                answerToUser.writeToConsoleLn("Name: ${collection.poll().name}")
+            }
+        }
+
+        answerToUser.writeToConsoleLn("")
     }
 }

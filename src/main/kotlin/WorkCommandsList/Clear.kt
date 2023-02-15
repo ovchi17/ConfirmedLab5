@@ -10,7 +10,7 @@ class Clear: Command {
         val answerToUser: AnswerToUser = AnswerToUser()
 
         workWithCollection.clearCollection()
-        answerToUser.writeToConsoleLn("Коллекиция успешно отчищена!")
+        answerToUser.writeToConsoleLn("Коллекция успешно отчищена!")
 
     }
 }

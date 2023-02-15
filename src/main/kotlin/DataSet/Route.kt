@@ -27,7 +27,7 @@ class Route {
 
     private var coordinates: Coordinates
 
-    private var name: String
+    internal var name: String
         set(value){
             if (value == ""){
                 throw InvalidAttributeValueException("Поле не может быть пустым")
