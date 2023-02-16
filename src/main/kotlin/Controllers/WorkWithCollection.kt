@@ -4,11 +4,14 @@ import Controllers.CollectionMainCommands
 import java.util.PriorityQueue
 import WorkCommandsList.*
 import DataSet.*
+import java.time.Instant
+import java.util.Date
 
 class WorkWithCollection: CollectionMainCommands {
 
       companion object{
           var priorityQueueCollection = PriorityQueue<Route>()
+          var initData = Date.from(Instant.now())
       }
 
     override fun getCollection(): PriorityQueue<Route> {
@@ -24,4 +27,9 @@ class WorkWithCollection: CollectionMainCommands {
     override fun addElementToCollection(routeObject: Route) {
         priorityQueueCollection.add(routeObject)
     }
+
+    fun getInitDate():Date {
+        return initData
+    }
+
 }
