@@ -23,7 +23,7 @@ class Route {
 
 
 
-    private var id: Long = (1..10000).random().toLong()
+    public var id: Long = (1..10000).random().toLong()
 
     private var coordinates: Coordinates
 

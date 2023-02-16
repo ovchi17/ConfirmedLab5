@@ -9,8 +9,8 @@ import java.util.Date
 
 class WorkWithCollection: CollectionMainCommands {
 
-      companion object{
-          var priorityQueueCollection = PriorityQueue<Route>()
+    companion object{
+          var priorityQueueCollection = PriorityQueue<Route>(RouteComporator())
           var initData = Date.from(Instant.now())
       }
 
