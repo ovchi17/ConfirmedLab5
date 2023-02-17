@@ -19,6 +19,10 @@ class Add: Command {
         var to: Location
         var distance: Long
 
+        if (str != "noInfo"){
+            id = str.toLong()
+        }
+
         answerToUser.writeToConsole("Введите имя: ")
         name = readln().toString()
         answerToUser.writeToConsoleLn("")
@@ -68,6 +72,8 @@ class Add: Command {
         val routeToAdd: Route = Route(id, name, coordinates, creationDate, from, to, distance)
 
         val workWithCollection: WorkWithCollection = WorkWithCollection()
-        workWithCollection.getCollection().add(routeToAdd)
+        workWithCollection.addElementToCollection(routeToAdd)
+
+        answerToUser.writeToConsoleLn("Коллекция успешно обновлена!")
     }
 }
