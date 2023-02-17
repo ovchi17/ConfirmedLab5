@@ -14,13 +14,6 @@ class UpdateId: Command {
         val answerToUser: AnswerToUser = AnswerToUser()
 
         var checkId = str.toLong()
-        var id: Long = (1..10000).random().toLong()
-        var name: String
-        var coordinates: Coordinates
-        var creationDate: LocalDate = LocalDate.now()
-        var from: Location
-        var to: Location
-        var distance: Long
 
         val workWithCollection: WorkWithCollection = WorkWithCollection()
         val collection = PriorityQueue<Route>(RouteComporator())
@@ -35,6 +28,7 @@ class UpdateId: Command {
                 add.execute(checkId.toString())
             }else{
                 answerToUser.writeToConsoleLn("Нет элемента с таким айди")
+                workWithCollection.getCollection().add(collection.peek())
             }
         }else{
             workWithCollection.getCollection().clear()
