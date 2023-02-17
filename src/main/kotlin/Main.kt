@@ -5,7 +5,7 @@ import UsersView.*
 
 fun main() {
 
-// pattern command!!
+// pattern command!
 // сдлеать вначале ввода >
 // три ветки
 // junit5 module tests
