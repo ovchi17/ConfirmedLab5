@@ -15,10 +15,10 @@ class Show: Command {
         if (collection.size == 0){
             answerToUser.writeToConsoleLn("Коллекция пуста")
         }else if(collection.size == 1){
-            answerToUser.writeToConsoleLn("Name: ${collection.peek().name}")
+            answerToUser.writeToConsoleLn("Name: ${collection.peek().name} Id: ${collection.peek().id}")
         }else{
             for (i in 0..collection.size - 1){
-                answerToUser.writeToConsoleLn("Name: ${collection.poll().name}")
+                answerToUser.writeToConsoleLn("Name: ${collection.poll().name} Id: ${collection.peek().id}")
             }
         }
 
