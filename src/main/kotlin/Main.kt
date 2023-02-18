@@ -5,13 +5,14 @@ import UsersView.*
 
 fun main() {
 
-// pattern command
+// pattern command!
 // сдлеать вначале ввода >
 // три ветки
 // junit5 module tests
 // сильные разветвления по файлам
 
     val writeToConsole: AnswerToUser = AnswerToUser()
+    val withCollection: WorkWithCollection = WorkWithCollection()
 
     val help: Help = Help()
     val info: Info = Info()
@@ -25,7 +26,7 @@ fun main() {
     val exit: Exit = Exit()
     val removeFirst: RemoveFirst = RemoveFirst()
     val addIfMax: AddIfMax = AddIfMax()
-    val  history: History = History()
+    val history: History = History()
     val removeAllByDistance: RemoveAllByDistance = RemoveAllByDistance()
     val averageOfDistance: AvarageOfDistance = AvarageOfDistance()
     val filterLessThanDistance: FilterLessThanDistance = FilterLessThanDistance()
@@ -57,6 +58,7 @@ fun main() {
         if (getCommandFromUser[0] in COMMANDS){
             val command: Command? = COMMANDS.get(getCommandFromUser[0])
             if (command != null) {
+                withCollection.historyUpdate(getCommandFromUser[0])
                 command.execute(getCommandFromUser[1])
             }
         }else{

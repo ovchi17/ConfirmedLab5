@@ -23,11 +23,11 @@ class Route {
 
 
 
-    private var id: Long = (1..10000).random().toLong()
+    public var id: Long = (1..10000).random().toLong()
 
     private var coordinates: Coordinates
 
-    private var name: String
+    internal var name: String
         set(value){
             if (value == ""){
                 throw InvalidAttributeValueException("Поле не может быть пустым")
