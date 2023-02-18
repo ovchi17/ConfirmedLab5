@@ -12,6 +12,7 @@ class WorkWithCollection: CollectionMainCommands {
     companion object{
           var priorityQueueCollection = PriorityQueue<Route>(RouteComporator())
           var initData = Date.from(Instant.now())
+          var commandHistory:MutableList<String> = mutableListOf()
       }
 
     override fun getCollection(): PriorityQueue<Route> {
@@ -26,6 +27,17 @@ class WorkWithCollection: CollectionMainCommands {
 
     override fun addElementToCollection(routeObject: Route) {
         priorityQueueCollection.add(routeObject)
+    }
+
+    fun historyUpdate(commandFromUser: String){
+        if (commandHistory.size == 14){
+            commandHistory.remove(commandHistory[0])
+        }
+        commandHistory.add(commandFromUser)
+    }
+
+    fun getHistory(): MutableList<String>{
+        return commandHistory
     }
 
     fun getInitDate():Date {
