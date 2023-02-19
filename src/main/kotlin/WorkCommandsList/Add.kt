@@ -26,7 +26,7 @@ class Add: Command {
         answerToUser.writeToConsole("Введите имя: ")
         name = readln().toString()
         answerToUser.writeToConsoleLn("")
-        answerToUser.writeToConsole("Введите координату 1: : ")
+        answerToUser.writeToConsole("Введите координату 1: ")
         var coord1: Long = readln().toLong()
         while ((coord1 > 108)){
             answerToUser.writeToConsoleLn("Вы ввели неверное значение! Максимальное значение числа: 108")

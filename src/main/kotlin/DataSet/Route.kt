@@ -25,7 +25,7 @@ class Route {
 
     public var id: Long = (1..10000).random().toLong()
 
-    private var coordinates: Coordinates
+    var coordinates: Coordinates
 
     internal var name: String
         set(value){
@@ -35,9 +35,9 @@ class Route {
             field = value
         }
     @Contextual
-    private var creationDate: LocalDate = LocalDate.now()
-    private var from: Location
-    private var to: Location
-    private var distance: Long
+    var creationDate: LocalDate = LocalDate.now()
+    var from: Location
+    var to: Location
+    var distance: Long
 
 }
