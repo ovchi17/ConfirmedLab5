@@ -61,5 +61,6 @@ class Save: Command {
         } else {
             File(pathToFile).writeText("")
         }
+        answerToUser.writeToConsoleLn("Файл сохранён.")
     }
 }
