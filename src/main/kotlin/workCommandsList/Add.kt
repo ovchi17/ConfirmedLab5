@@ -1,10 +1,9 @@
-package WorkCommandsList
+package workCommandsList
 
-import Controllers.WorkWithCollection
-import DataSet.*
-import UsersView.AnswerToUser
+import controllers.WorkWithCollection
+import dataSet.*
+import usersView.AnswerToUser
 import java.time.LocalDate
-import java.util.*
 
 
 class Add: Command {

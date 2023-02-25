@@ -1,7 +1,7 @@
-package WorkCommandsList
+package workCommandsList
 
-import Controllers.WorkWithCollection
-import UsersView.AnswerToUser
+import controllers.WorkWithCollection
+import usersView.AnswerToUser
 
 class Info: Command {
     override fun execute(str: String) {

@@ -1,8 +1,8 @@
-package WorkCommandsList
+package workCommandsList
 
-import Controllers.WorkWithCollection
-import DataSet.Route
-import DataSet.RouteComporator
+import controllers.WorkWithCollection
+import dataSet.Route
+import dataSet.RouteComporator
 import java.util.*
 
 class AvarageOfDistance: Command {

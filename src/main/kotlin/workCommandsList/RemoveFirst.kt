@@ -1,4 +1,4 @@
-package WorkCommandsList
+package workCommandsList
 
 
 class RemoveFirst: Command {

@@ -1,6 +1,5 @@
-package DataSet
+package dataSet
 
-import WorkCommandsList.*
 import javax.management.InvalidAttributeValueException
 import kotlinx.serialization.Serializable
 

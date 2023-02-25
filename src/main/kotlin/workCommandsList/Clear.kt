@@ -1,7 +1,7 @@
-package WorkCommandsList
+package workCommandsList
 
-import Controllers.*
-import UsersView.AnswerToUser
+import controllers.*
+import usersView.AnswerToUser
 
 class Clear: Command {
     override fun execute(str: String) {

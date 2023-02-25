@@ -1,6 +1,6 @@
-package Controllers
+package controllers
 
-import DataSet.Route
+import dataSet.Route
 import java.util.PriorityQueue
 
 interface CollectionMainCommands {

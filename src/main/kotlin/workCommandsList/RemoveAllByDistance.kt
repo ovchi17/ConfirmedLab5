@@ -1,9 +1,9 @@
-package WorkCommandsList
+package workCommandsList
 
-import Controllers.WorkWithCollection
-import DataSet.Route
-import DataSet.RouteComporator
-import UsersView.AnswerToUser
+import controllers.WorkWithCollection
+import dataSet.Route
+import dataSet.RouteComporator
+import usersView.AnswerToUser
 import java.util.*
 
 class RemoveAllByDistance: Command {

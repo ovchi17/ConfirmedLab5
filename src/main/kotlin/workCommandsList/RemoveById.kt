@@ -1,15 +1,12 @@
-package WorkCommandsList
+package workCommandsList
 
-import Controllers.WorkWithCollection
-import DataSet.Coordinates
-import DataSet.Location
-import DataSet.Route
-import DataSet.RouteComporator
-import UsersView.AnswerToUser
-import java.time.LocalDate
+import controllers.WorkWithCollection
+import dataSet.Route
+import dataSet.RouteComporator
+import usersView.AnswerToUser
 import java.util.*
 
-class UpdateId: Command {
+class RemoveById: Command {
     override fun execute(str: String) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
@@ -18,31 +15,27 @@ class UpdateId: Command {
         val workWithCollection: WorkWithCollection = WorkWithCollection()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
-        val add: Add = Add()
 
         if (collection.size == 0){
             answerToUser.writeToConsoleLn("Коллекция пуста")
         }else if(collection.size == 1){
-            workWithCollection.getCollection().clear()
             if (collection.peek().id == checkId){
-                add.execute(checkId.toString())
+                workWithCollection.getCollection().clear()
+                answerToUser.writeToConsoleLn("Отчищено")
             }else{
-                answerToUser.writeToConsoleLn("Нет элемента с таким айди")
-                workWithCollection.getCollection().add(collection.peek())
+                answerToUser.writeToConsoleLn("Нет id в списке")
             }
         }else{
             workWithCollection.getCollection().clear()
             for (i in 0..collection.size - 1){
                 if (collection.peek().id == checkId){
-                    add.execute(checkId.toString())
                     collection.poll()
+                    answerToUser.writeToConsoleLn("Отчищено")
                 }else{
                     workWithCollection.getCollection().add(collection.peek())
                     collection.poll()
                 }
             }
         }
-
-
     }
 }

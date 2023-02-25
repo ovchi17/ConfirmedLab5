@@ -1,6 +1,4 @@
-package WorkCommandsList
-
-import kotlin.system.exitProcess
+package workCommandsList
 
 class CommandDataBase {
 

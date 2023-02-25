@@ -1,7 +1,4 @@
-package Controllers
-
-import kotlin.system.exitProcess
-import WorkCommandsList.*
+package controllers
 
 class AllCommands {
         fun helpStart() {

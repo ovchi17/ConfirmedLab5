@@ -1,10 +1,10 @@
-package WorkCommandsList
+package workCommandsList
 
 import java.util.*;
-import Controllers.WorkWithCollection
-import DataSet.Route
-import DataSet.RouteComporator
-import UsersView.AnswerToUser
+import controllers.WorkWithCollection
+import dataSet.Route
+import dataSet.RouteComporator
+import usersView.AnswerToUser
 
 class Show: Command {
     override fun execute(str: String) {

@@ -1,6 +1,5 @@
-package DataSet
+package dataSet
 
-import WorkCommandsList.*
 import kotlinx.serialization.Contextual
 import javax.management.InvalidAttributeValueException
 import java.time.LocalDate;

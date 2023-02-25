@@ -1,5 +1,5 @@
-package WorkCommandsList
-import UsersView.*
+package workCommandsList
+import usersView.*
 
 class Help: Command {
     override fun execute(str: String) {

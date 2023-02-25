@@ -1,12 +1,12 @@
-package WorkCommandsList
+package workCommandsList
 
-import Controllers.WorkWithCollection
-import DataSet.Route
-import DataSet.RouteComporator
-import UsersView.AnswerToUser
+import controllers.WorkWithCollection
+import dataSet.Route
+import dataSet.RouteComporator
+import usersView.AnswerToUser
 import java.util.*
 
-class RemoveById: Command {
+class UpdateId: Command {
     override fun execute(str: String) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
@@ -15,27 +15,31 @@ class RemoveById: Command {
         val workWithCollection: WorkWithCollection = WorkWithCollection()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
+        val add: Add = Add()
 
         if (collection.size == 0){
             answerToUser.writeToConsoleLn("Коллекция пуста")
         }else if(collection.size == 1){
+            workWithCollection.getCollection().clear()
             if (collection.peek().id == checkId){
-                workWithCollection.getCollection().clear()
-                answerToUser.writeToConsoleLn("Отчищено")
+                add.execute(checkId.toString())
             }else{
-                answerToUser.writeToConsoleLn("Нет id в списке")
+                answerToUser.writeToConsoleLn("Нет элемента с таким айди")
+                workWithCollection.getCollection().add(collection.peek())
             }
         }else{
             workWithCollection.getCollection().clear()
             for (i in 0..collection.size - 1){
                 if (collection.peek().id == checkId){
+                    add.execute(checkId.toString())
                     collection.poll()
-                    answerToUser.writeToConsoleLn("Отчищено")
                 }else{
                     workWithCollection.getCollection().add(collection.peek())
                     collection.poll()
                 }
             }
         }
+
+
     }
 }

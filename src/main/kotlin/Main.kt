@@ -1,6 +1,6 @@
-import Controllers.*
-import WorkCommandsList.*
-import UsersView.*
+import controllers.*
+import workCommandsList.*
+import usersView.*
 
 
 fun main() {

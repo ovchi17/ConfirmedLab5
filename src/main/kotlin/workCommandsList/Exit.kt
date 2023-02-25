@@ -1,6 +1,6 @@
-package WorkCommandsList
+package workCommandsList
 
-import UsersView.AnswerToUser
+import usersView.AnswerToUser
 import kotlin.system.exitProcess
 
 class Exit: Command{

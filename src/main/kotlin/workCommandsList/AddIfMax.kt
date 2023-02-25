@@ -1,4 +1,4 @@
-package WorkCommandsList
+package workCommandsList
 
 class AddIfMax: Command {
     override fun execute(str: String) {

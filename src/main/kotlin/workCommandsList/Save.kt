@@ -1,19 +1,11 @@
-package WorkCommandsList
+package workCommandsList
 
-import Controllers.WorkWithCollection
-import DataSet.Coordinates
-import DataSet.Route
-import DataSet.RouteComporator
-import UsersView.AnswerToUser
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.Serializer
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.*
-import serialize.SerializeManager
+import controllers.WorkWithCollection
+import dataSet.Route
+import dataSet.RouteComporator
+import usersView.AnswerToUser
 import java.io.File
 import java.io.FileReader
-import java.io.PrintWriter
-import java.nio.file.Path
 import java.util.*
 
 //@Serializable
