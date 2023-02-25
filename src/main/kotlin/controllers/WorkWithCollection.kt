@@ -3,7 +3,9 @@ package controllers
 import java.util.PriorityQueue
 import dataSet.*
 import java.time.Instant
+import java.util.Collections.max
 import java.util.Date
+import kotlin.math.max
 
 class WorkWithCollection: CollectionMainCommands {
 
@@ -11,6 +13,7 @@ class WorkWithCollection: CollectionMainCommands {
     private var priorityQueueCollection = PriorityQueue<Route>(RouteComporator())
     var initData = Date.from(Instant.now())
     var commandHistory:MutableList<String> = mutableListOf()
+    var idManager: Long = 1;
 
 
     override fun getCollection(): PriorityQueue<Route> {

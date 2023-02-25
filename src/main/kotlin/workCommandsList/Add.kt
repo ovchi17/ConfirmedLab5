@@ -10,7 +10,8 @@ class Add: Command {
     override fun execute(str: String, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
-        var id: Long = (1..10000).random().toLong()
+        workWithCollection.idManager++
+        var id: Long = workWithCollection.idManager
         var name: String
         var coordinates: Coordinates
         var creationDate: LocalDate = LocalDate.now()

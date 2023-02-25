@@ -20,7 +20,7 @@ class RemoveById: Command {
         }else if(collection.size == 1){
             if (collection.peek().id == checkId){
                 workWithCollection.getCollection().clear()
-                answerToUser.writeToConsoleLn("Отчищено")
+                answerToUser.writeToConsoleLn("Очищено")
             }else{
                 answerToUser.writeToConsoleLn("Нет id в списке")
             }
@@ -29,7 +29,7 @@ class RemoveById: Command {
             for (i in 0..collection.size - 1){
                 if (collection.peek().id == checkId){
                     collection.poll()
-                    answerToUser.writeToConsoleLn("Отчищено")
+                    answerToUser.writeToConsoleLn("Очищено")
                 }else{
                     workWithCollection.getCollection().add(collection.peek())
                     collection.poll()
