@@ -7,7 +7,7 @@ import java.time.LocalDate
 
 
 class Add: Command {
-    override fun execute(str: String) {
+    override fun execute(str: String, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
         var id: Long = (1..10000).random().toLong()
@@ -70,7 +70,6 @@ class Add: Command {
 
         val routeToAdd: Route = Route(id, name, coordinates, creationDate, from, to, distance)
 
-        val workWithCollection: WorkWithCollection = WorkWithCollection()
         workWithCollection.addElementToCollection(routeToAdd)
 
         answerToUser.writeToConsoleLn("Коллекция успешно обновлена!")

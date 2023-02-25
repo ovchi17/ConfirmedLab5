@@ -7,9 +7,8 @@ import dataSet.RouteComporator
 import usersView.AnswerToUser
 
 class Show: Command {
-    override fun execute(str: String) {
+    override fun execute(str: String, workWithCollection: WorkWithCollection) {
 
-        val workWithCollection: WorkWithCollection = WorkWithCollection()
         val answerToUser: AnswerToUser = AnswerToUser()
 
         val collection = PriorityQueue<Route>(RouteComporator())

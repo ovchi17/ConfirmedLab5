@@ -7,12 +7,11 @@ import usersView.AnswerToUser
 import java.util.*
 
 class RemoveById: Command {
-    override fun execute(str: String) {
+    override fun execute(str: String, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
         var checkId = str.toLong()
 
-        val workWithCollection: WorkWithCollection = WorkWithCollection()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 

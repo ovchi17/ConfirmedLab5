@@ -1,8 +1,9 @@
 package workCommandsList
+import controllers.WorkWithCollection
 import usersView.*
 
 class Help: Command {
-    override fun execute(str: String) {
+    override fun execute(str: String, workWithCollection: WorkWithCollection) {
 
         val answerToUser: AnswerToUser = AnswerToUser()
 

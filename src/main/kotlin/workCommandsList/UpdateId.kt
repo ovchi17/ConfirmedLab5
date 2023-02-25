@@ -7,12 +7,11 @@ import usersView.AnswerToUser
 import java.util.*
 
 class UpdateId: Command {
-    override fun execute(str: String) {
+    override fun execute(str: String, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
         var checkId = str.toLong()
 
-        val workWithCollection: WorkWithCollection = WorkWithCollection()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
         val add: Add = Add()
@@ -22,7 +21,7 @@ class UpdateId: Command {
         }else if(collection.size == 1){
             workWithCollection.getCollection().clear()
             if (collection.peek().id == checkId){
-                add.execute(checkId.toString())
+                add.execute(checkId.toString(), workWithCollection)
             }else{
                 answerToUser.writeToConsoleLn("Нет элемента с таким айди")
                 workWithCollection.getCollection().add(collection.peek())
@@ -31,7 +30,7 @@ class UpdateId: Command {
             workWithCollection.getCollection().clear()
             for (i in 0..collection.size - 1){
                 if (collection.peek().id == checkId){
-                    add.execute(checkId.toString())
+                    add.execute(checkId.toString(), workWithCollection)
                     collection.poll()
                 }else{
                     workWithCollection.getCollection().add(collection.peek())

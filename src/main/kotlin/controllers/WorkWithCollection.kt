@@ -7,11 +7,11 @@ import java.util.Date
 
 class WorkWithCollection: CollectionMainCommands {
 
-    companion object{
-          var priorityQueueCollection = PriorityQueue<Route>(RouteComporator())
-          var initData = Date.from(Instant.now())
-          var commandHistory:MutableList<String> = mutableListOf()
-      }
+
+    private var priorityQueueCollection = PriorityQueue<Route>(RouteComporator())
+    var initData = Date.from(Instant.now())
+    var commandHistory:MutableList<String> = mutableListOf()
+
 
     override fun getCollection(): PriorityQueue<Route> {
         return priorityQueueCollection

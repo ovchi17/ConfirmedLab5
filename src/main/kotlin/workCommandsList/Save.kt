@@ -11,21 +11,21 @@ import java.util.*
 //@Serializable
 class Save: Command {
 
-    private val workWithCollection: WorkWithCollection = WorkWithCollection()
     val answerToUser: AnswerToUser = AnswerToUser()
 
-    private var pathToFile: String = "src/main/kotlin/DataSet/DataOfCollection.json"
+    private var pathToFile: String = "src/main/kotlin/dataSet/DataOfCollection.json"
 
     private var fileReader: FileReader = FileReader(pathToFile)
-    private var copyPriorityQueue: PriorityQueue<Route> = workWithCollection.getCollection()
 
-    fun tagsCompilations (rawString: String): String {
+
+    fun tagsCompilations (rawString: String, workWithCollection: WorkWithCollection): String {
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 
         fileReader.read()
         var string: String = rawString
+        var copyPriorityQueue: PriorityQueue<Route> = workWithCollection.getCollection()
         val elements = copyPriorityQueue.toList()
         for (element in elements) {
             string += "\t \"element\": {\n"
@@ -40,14 +40,17 @@ class Save: Command {
         }
         return string
     }
-    override fun execute(str: String) {
+    override fun execute(str: String, workWithCollection: WorkWithCollection) {
 
         var tags: String = ""
         val tagsStart: String = "{\n"
         val tagsEnd: String = "}"
 
+        var copyPriorityQueue: PriorityQueue<Route> = workWithCollection.getCollection()
+        var mngr = workWithCollection
+
         if (copyPriorityQueue.isNotEmpty()) {
-            tags += tagsCompilations(tagsStart+tags)
+            tags += tagsCompilations(tagsStart+tags, mngr)
             tags += tagsEnd
             File(pathToFile).writeText(tags)
         } else {

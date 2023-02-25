@@ -12,7 +12,7 @@ fun main() {
 // сильные разветвления по файлам
 
     val writeToConsole: AnswerToUser = AnswerToUser()
-    val withCollection: WorkWithCollection = WorkWithCollection()
+    val workWithCollection: WorkWithCollection = WorkWithCollection()
 
     val help: Help = Help()
     val info: Info = Info()
@@ -58,8 +58,8 @@ fun main() {
         if (getCommandFromUser[0] in COMMANDS){
             val command: Command? = COMMANDS.get(getCommandFromUser[0])
             if (command != null) {
-                withCollection.historyUpdate(getCommandFromUser[0])
-                command.execute(getCommandFromUser[1])
+                workWithCollection.historyUpdate(getCommandFromUser[0])
+                command.execute(getCommandFromUser[1], workWithCollection)
             }
         }else{
             writeToConsole.writeToConsoleLn("Введена неверная команда. Используйте help для просмотра команд")
