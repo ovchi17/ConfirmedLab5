@@ -1,11 +1,11 @@
 package usersView
 
 class AnswerToUser {
-    fun writeToConsole(whatToPrint: String){
+    fun writeToConsole(whatToPrint: String?){
         print(whatToPrint)
     }
 
-    fun writeToConsoleLn(whatToPrint: String){
+    fun writeToConsoleLn(whatToPrint: String?){
         println(whatToPrint)
     }
 

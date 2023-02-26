@@ -4,6 +4,7 @@ import controllers.WorkWithCollection
 import dataSet.Route
 import dataSet.RouteComporator
 import usersView.AnswerToUser
+import usersView.ConsoleWriter
 import java.io.File
 import java.io.FileReader
 import java.util.*
@@ -16,6 +17,7 @@ class Save: Command {
     private var pathToFile: String = "src/main/kotlin/dataSet/DataOfCollection.json"
 
     private var fileReader: FileReader = FileReader(pathToFile)
+    val consoleWriter: ConsoleWriter = ConsoleWriter()
 
 
     fun tagsCompilations (rawString: String, workWithCollection: WorkWithCollection): String {
@@ -56,6 +58,6 @@ class Save: Command {
         } else {
             File(pathToFile).writeText("")
         }
-        answerToUser.writeToConsoleLn("Файл сохранён.")
+        consoleWriter.printToConsoleLn("saved")
     }
 }

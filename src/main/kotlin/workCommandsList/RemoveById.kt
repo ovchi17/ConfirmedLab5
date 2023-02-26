@@ -4,6 +4,7 @@ import controllers.WorkWithCollection
 import dataSet.Route
 import dataSet.RouteComporator
 import usersView.AnswerToUser
+import usersView.ConsoleWriter
 import java.util.*
 
 class RemoveById: Command {
@@ -12,24 +13,25 @@ class RemoveById: Command {
 
         var checkId = str[0]
 
+        val consoleWriter: ConsoleWriter = ConsoleWriter()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 
         if (collection.size == 0){
-            answerToUser.writeToConsoleLn("Коллекция пуста")
+            consoleWriter.printToConsoleLn("emptyCollection")
         }else if(collection.size == 1){
             if (collection.peek().id == checkId){
                 workWithCollection.getCollection().clear()
-                answerToUser.writeToConsoleLn("Очищено")
+                consoleWriter.printToConsoleLn("cleared")
             }else{
-                answerToUser.writeToConsoleLn("Нет id в списке")
+                consoleWriter.printToConsoleLn("noId")
             }
         }else{
             workWithCollection.getCollection().clear()
             for (i in 0..collection.size - 1){
                 if (collection.peek().id == checkId){
                     collection.poll()
-                    answerToUser.writeToConsoleLn("Очищено")
+                    consoleWriter.printToConsoleLn("cleared")
                 }else{
                     workWithCollection.getCollection().add(collection.peek())
                     collection.poll()

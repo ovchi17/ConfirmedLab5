@@ -5,22 +5,30 @@ import controllers.WorkWithCollection
 import dataSet.Route
 import dataSet.RouteComporator
 import usersView.AnswerToUser
+import usersView.ConsoleWriter
 
 class Show: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 
         val answerToUser: AnswerToUser = AnswerToUser()
+        val consoleWriter: ConsoleWriter = ConsoleWriter()
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 
         if (collection.size == 0){
-            answerToUser.writeToConsoleLn("Коллекция пуста")
+            consoleWriter.printToConsoleLn("emptyCollection")
         }else if(collection.size == 1){
-            answerToUser.writeToConsoleLn("Name: ${collection.peek().name} Id: ${collection.peek().id}")
+            consoleWriter.printToConsole("showName")
+            answerToUser.writeToConsoleLn(collection.peek().name.toString())
+            consoleWriter.printToConsole("showId")
+            answerToUser.writeToConsoleLn(collection.peek().id.toString())
         }else{
             for (i in 0..collection.size - 1){
-                answerToUser.writeToConsoleLn("Name: ${collection.peek().name} Id: ${collection.peek().id}")
+                consoleWriter.printToConsole("showName")
+                answerToUser.writeToConsoleLn(collection.peek().name.toString())
+                consoleWriter.printToConsole("showId")
+                answerToUser.writeToConsoleLn(collection.peek().id.toString())
                 collection.poll()
             }
         }

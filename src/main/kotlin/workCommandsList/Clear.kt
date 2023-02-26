@@ -2,14 +2,17 @@ package workCommandsList
 
 import controllers.*
 import usersView.AnswerToUser
+import usersView.ConsoleWriter
 
 class Clear: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 
-        val answerToUser: AnswerToUser = AnswerToUser()
+        val consoleWriter: ConsoleWriter = ConsoleWriter()
 
         workWithCollection.clearCollection()
-        answerToUser.writeToConsoleLn("Коллекция успешно отчищена!")
+
+        consoleWriter.printToConsole("cleared")
+        consoleWriter.printToConsoleLn("success")
 
     }
 }

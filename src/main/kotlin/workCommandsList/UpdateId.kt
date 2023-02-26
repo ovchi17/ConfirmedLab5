@@ -5,6 +5,7 @@ import controllers.WorkWithCollection
 import dataSet.Route
 import dataSet.RouteComporator
 import usersView.AnswerToUser
+import usersView.ConsoleWriter
 import java.util.*
 
 class UpdateId: Command {
@@ -13,13 +14,14 @@ class UpdateId: Command {
 
         var checkId = str[0]
 
+        val consoleWriter: ConsoleWriter = ConsoleWriter()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
         val add: Add = Add()
         val tokenizator: Tokenizator = Tokenizator()
 
         if (collection.size == 0){
-            answerToUser.writeToConsoleLn("Коллекция пуста")
+            consoleWriter.printToConsoleLn("emptyCollection")
         }else if(collection.size == 1){
             workWithCollection.getCollection().clear()
             if (collection.peek().id == checkId){
@@ -27,7 +29,7 @@ class UpdateId: Command {
                 tokenizator.tokenizator(add, sendList, workWithCollection)
 
             }else{
-                answerToUser.writeToConsoleLn("Нет элемента с таким айди")
+                consoleWriter.printToConsoleLn("noId")
                 workWithCollection.getCollection().add(collection.peek())
             }
         }else{
