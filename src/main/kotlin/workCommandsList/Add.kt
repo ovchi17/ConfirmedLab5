@@ -3,12 +3,15 @@ package workCommandsList
 import controllers.WorkWithCollection
 import dataSet.*
 import usersView.AnswerToUser
+import usersView.ConsoleWriter
 import java.time.LocalDate
 
 
 class Add: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
-        val answerToUser: AnswerToUser = AnswerToUser()
+
+        val addSet: AddInfoGetter = AddInfoGetter()
+        val consoleWriter: ConsoleWriter = ConsoleWriter()
 
         workWithCollection.idManager++
         var id: Long = workWithCollection.idManager
@@ -24,47 +27,16 @@ class Add: Command {
             id = str[0] as Long
         }
 
-        answerToUser.writeToConsole("Введите имя: ")
-        name = readln().toString()
-        answerToUser.writeToConsoleLn("")
-        answerToUser.writeToConsole("Введите координату 1: ")
-        var coord1: Long = readln().toLong()
-        while ((coord1 > 108)){
-            answerToUser.writeToConsoleLn("Вы ввели неверное значение! Максимальное значение числа: 108")
-            coord1 = readln().toLong()
-        }
-        answerToUser.writeToConsoleLn("")
-        answerToUser.writeToConsole("Введите координату 2: ")
-        var coord2: Long = readln().toLong()
-        while ((coord2 > 20)){
-            answerToUser.writeToConsoleLn("Вы ввели неверное значение! Максимальное значение числа: 20")
-            coord2 = readln().toLong()
-        }
-        answerToUser.writeToConsoleLn("")
-
-        answerToUser.writeToConsole("Введите локацию 1: ")
-        var location1: Long = readln().toLong()
-        answerToUser.writeToConsoleLn("")
-        answerToUser.writeToConsole("Введите локацию 2: ")
-        var location2: Long = readln().toLong()
-        answerToUser.writeToConsoleLn("")
-        answerToUser.writeToConsole("Введите локацию 3: ")
-        var location3: Int = readln().toInt()
-        answerToUser.writeToConsoleLn("")
-
-        answerToUser.writeToConsole("Введите локацию 1_2: ")
-        var location1_2: Long = readln().toLong()
-        answerToUser.writeToConsoleLn("")
-        answerToUser.writeToConsole("Введите локацию 2_2: ")
-        var location2_2: Long = readln().toLong()
-        answerToUser.writeToConsoleLn("")
-        answerToUser.writeToConsole("Введите локацию 3_2: ")
-        var location3_2: Int = readln().toInt()
-        answerToUser.writeToConsoleLn("")
-
-        answerToUser.writeToConsole("Введите дистанцию: ")
-        distance = readln().toLong()
-        answerToUser.writeToConsoleLn("")
+        name = addSet.name()
+        val coord1: Long = addSet.coord1()
+        val coord2: Long = addSet.coord2()
+        val location1: Long = addSet.location1()
+        val location2: Long = addSet.location2()
+        val location3: Int = addSet.location3()
+        val location1_2: Long = addSet.location12()
+        val location2_2: Long = addSet.location22()
+        val location3_2: Int = addSet.location32()
+        distance = addSet.distance()
 
         coordinates = Coordinates(coord1, coord2)
         to = Location(location1, location2, location3)
@@ -74,6 +46,6 @@ class Add: Command {
 
         workWithCollection.addElementToCollection(routeToAdd)
 
-        answerToUser.writeToConsoleLn("Коллекция успешно обновлена!")
+        consoleWriter.printToConsoleLn("success")
     }
 }
