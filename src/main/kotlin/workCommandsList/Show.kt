@@ -7,7 +7,7 @@ import dataSet.RouteComporator
 import usersView.AnswerToUser
 
 class Show: Command {
-    override fun execute(str: String, workWithCollection: WorkWithCollection) {
+    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 
         val answerToUser: AnswerToUser = AnswerToUser()
 

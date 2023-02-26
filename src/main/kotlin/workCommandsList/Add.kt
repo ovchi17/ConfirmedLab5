@@ -7,7 +7,7 @@ import java.time.LocalDate
 
 
 class Add: Command {
-    override fun execute(str: String, workWithCollection: WorkWithCollection) {
+    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
         workWithCollection.idManager++
@@ -18,9 +18,10 @@ class Add: Command {
         var from: Location
         var to: Location
         var distance: Long
+        var stopper: Long = 1
 
-        if (str != "noInfo"){
-            id = str.toLong()
+        if (str[0] != stopper){
+            id = str[0] as Long
         }
 
         answerToUser.writeToConsole("Введите имя: ")

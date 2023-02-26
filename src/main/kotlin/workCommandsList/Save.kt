@@ -40,7 +40,7 @@ class Save: Command {
         }
         return string
     }
-    override fun execute(str: String, workWithCollection: WorkWithCollection) {
+    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 
         var tags: String = ""
         val tagsStart: String = "{\n"

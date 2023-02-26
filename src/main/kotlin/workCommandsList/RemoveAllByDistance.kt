@@ -7,10 +7,10 @@ import usersView.AnswerToUser
 import java.util.*
 
 class RemoveAllByDistance: Command {
-    override fun execute(str: String, workWithCollection: WorkWithCollection) {
+    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
-        var checkDistance = str.toLong()
+        var checkDistance = str[0]
 
 
         val collection = PriorityQueue<Route>(RouteComporator())
@@ -21,7 +21,7 @@ class RemoveAllByDistance: Command {
         }else if(collection.size == 1){
             if (collection.peek().distance == checkDistance){
                 workWithCollection.getCollection().clear()
-                answerToUser.writeToConsoleLn("Отчищено")
+                answerToUser.writeToConsoleLn("Очищено")
             }else{
                 answerToUser.writeToConsoleLn("Нет distance в списке")
             }
@@ -30,7 +30,7 @@ class RemoveAllByDistance: Command {
             for (i in 0..collection.size - 1){
                 if (collection.peek().distance == checkDistance){
                     collection.poll()
-                    answerToUser.writeToConsoleLn("Отчищено")
+                    answerToUser.writeToConsoleLn("Очищено")
                 }else{
                     workWithCollection.getCollection().add(collection.peek())
                     collection.poll()

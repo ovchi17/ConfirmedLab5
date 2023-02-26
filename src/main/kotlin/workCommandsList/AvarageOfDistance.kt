@@ -6,7 +6,7 @@ import dataSet.RouteComporator
 import java.util.*
 
 class AvarageOfDistance: Command {
-    override fun execute(str: String, workWithCollection: WorkWithCollection) {
+    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
         println("aod")
 //        Я тут просто кое-че тестил, пока не пустое)))
         val collection = PriorityQueue<Route>(RouteComporator())

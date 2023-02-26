@@ -55,12 +55,11 @@ fun main() {
 
     while (true){
         writeToConsole.writeToConsole("> ")
-        val getCommandFromUser: List<String> = (readln().lowercase() + " noInfo").split(" ")
+        val getCommandFromUser: List<String> = ((readln().lowercase()) + " 1").split(" ")
         if (getCommandFromUser[0] in COMMANDS){
             val command: Command? = COMMANDS.get(getCommandFromUser[0])
             if (command != null) {
                 workWithCollection.historyUpdate(getCommandFromUser[0])
-                //command.execute(getCommandFromUser[1], workWithCollection)
                 tokenizator.tokenizator(command, getCommandFromUser, workWithCollection)
             }
         }else{

@@ -4,7 +4,7 @@ import controllers.WorkWithCollection
 import usersView.AnswerToUser
 
 class History: Command {
-    override fun execute(str: String, workWithCollection: WorkWithCollection) {
+    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
         val collection = workWithCollection.getHistory()

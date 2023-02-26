@@ -4,7 +4,7 @@ import controllers.WorkWithCollection
 
 
 class RemoveFirst: Command {
-    override fun execute(str: String, workWithCollection: WorkWithCollection) {
+    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 
     }
 }
