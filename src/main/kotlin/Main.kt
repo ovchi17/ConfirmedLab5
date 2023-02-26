@@ -13,6 +13,7 @@ fun main() {
 
     val writeToConsole: AnswerToUser = AnswerToUser()
     val workWithCollection: WorkWithCollection = WorkWithCollection()
+    val tokenizator: Tokenizator = Tokenizator()
 
     val help: Help = Help()
     val info: Info = Info()
@@ -59,7 +60,8 @@ fun main() {
             val command: Command? = COMMANDS.get(getCommandFromUser[0])
             if (command != null) {
                 workWithCollection.historyUpdate(getCommandFromUser[0])
-                command.execute(getCommandFromUser[1], workWithCollection)
+                //command.execute(getCommandFromUser[1], workWithCollection)
+                tokenizator.tokenizator(command, getCommandFromUser, workWithCollection)
             }
         }else{
             writeToConsole.writeToConsoleLn("Введена неверная команда. Используйте help для просмотра команд")
