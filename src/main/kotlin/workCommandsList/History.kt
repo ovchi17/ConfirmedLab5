@@ -12,6 +12,6 @@ class History: Command {
         for (i in 0..collection.size - 1){
             answerToUser.writeToConsole(collection[i] + " ")
         }
-        answerToUser.writeToConsoleLn("Успешно!")
+        answerToUser.writeToConsoleLn("")
     }
 }
