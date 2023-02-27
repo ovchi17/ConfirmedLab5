@@ -6,3 +6,21 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# Compiled class file
+*.class
+*.jar
+*.MF
+
+# Log file
+*.log
+*.txt
+
+#other
+.idea/
+build/
+gradlew
+gradlew.bat
+.gradle/
+gradle/
+*.iml

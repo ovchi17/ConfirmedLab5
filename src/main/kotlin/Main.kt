@@ -32,7 +32,6 @@ fun main() {
     val averageOfDistance: AvarageOfDistance = AvarageOfDistance()
     val filterLessThanDistance: FilterLessThanDistance = FilterLessThanDistance()
 
-
     writeToConsole.writeToConsoleLn("Для получения списка команд введите: help")
 
     val COMMANDS = mapOf("help" to help,
