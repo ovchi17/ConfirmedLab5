@@ -13,6 +13,7 @@ class TypeMessages {
         "location3_2" to "Введите локацию 3_2: ",
         "distance" to "Введите дистанцию: ",
         "success" to  "Успешно! ",
+        "noSuccess" to  "Не успешно! ",
         "end" to "Заверщение программы. ",
         "***" to "********************************************************************************************************************************************",
         "helpHelp" to " ** help : вывести справку по доступным командам",
@@ -41,7 +42,8 @@ class TypeMessages {
         "noId" to "Нет id в коллекции ",
         "saved" to "Сохранено! ",
         "showName" to "Name: ",
-        "showId" to " Id: "
+        "showId" to " Id: ",
+        "noResult" to "Нет подходящих элементов "
     )
 
     fun msgToPrint (printingKey: String): String? {
