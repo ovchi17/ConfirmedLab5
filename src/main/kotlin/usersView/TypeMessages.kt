@@ -43,7 +43,9 @@ class TypeMessages {
         "saved" to "Сохранено! ",
         "showName" to "Name: ",
         "showId" to " Id: ",
-        "noResult" to "Нет подходящих элементов "
+        "noResult" to "Нет подходящих элементов ",
+        "noFile" to "Файл не найден",
+        "recursion" to "Возникла рекурсия"
     )
 
     fun msgToPrint (printingKey: String): String? {
