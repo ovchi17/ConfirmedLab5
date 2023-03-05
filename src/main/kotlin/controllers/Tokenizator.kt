@@ -73,7 +73,11 @@ class Tokenizator {
             val commandRight: Command? = mp(command)
             if (commandRight != null) {
                 var sendList = mutableListOf<Any>()
-                if (mass[0] in listOfLong){
+
+                if (command == "add" || command == "add_if_max") {
+                    sendList.add(1.toLong())
+                    sendList.add(mass[1])
+                }else if (mass[0] in listOfLong){
                     val newToken = mass[1].toLong()
                     sendList.add(newToken)
                 }else if(mass[0] in listString){

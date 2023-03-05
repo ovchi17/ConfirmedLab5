@@ -13,6 +13,9 @@ class ExecuteScript: Command {
     var stopRecursion = 5
     var checkerRecursion = 0
     var tokenizator = Tokenizator()
+    var addChecker = 0
+    var params = ""
+    var specialForAdd = ""
 
 
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
@@ -30,13 +33,27 @@ class ExecuteScript: Command {
                 val commandFromFile = fileLink.readStrings()
                 for (line in commandFromFile) {
                     val args = line.split(" ")
-                    if (args[0] != "execute_script") {
-                        tokenizator.tokenizatorHelper(args[0], args, workWithCollection)
-                    }else{
+                    if (args[0] == "execute_script") {
                         checkerRecursion++
                         var sendList = mutableListOf<Any>()
                         sendList.add(args[1])
                         execute(sendList, workWithCollection)
+                    }else if (args[0] == "add" || args[0] == "add_if_max"){
+                        addChecker = 10
+                        specialForAdd = args[0]
+                    }else{
+                        if (addChecker > 0){
+                            params = params + line + " "
+                            addChecker -= 1
+                            if (addChecker == 0){
+                                var addList = mutableListOf<String>()
+                                addList.add(specialForAdd)
+                                addList.add(params)
+                                tokenizator.tokenizatorHelper(specialForAdd, addList, workWithCollection)
+                            }
+                        }else{
+                            tokenizator.tokenizatorHelper(args[0], args, workWithCollection)
+                        }
                     }
                 }
             }else{
