@@ -6,7 +6,6 @@ package usersView
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-
 class ReadFromUser {
 
     /**
@@ -14,7 +13,6 @@ class ReadFromUser {
      *
      * @return txt as String
      */
-
     fun readUsersMessage(): String{
         val txt = readln()
         return txt

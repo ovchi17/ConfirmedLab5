@@ -14,7 +14,6 @@ class AnswerToUser {
      *
      * @param whatToPrint String?
      */
-
     fun writeToConsole(whatToPrint: String?){
         print(whatToPrint)
     }
@@ -24,7 +23,6 @@ class AnswerToUser {
      *
      * @param whatToPrint String?
      */
-
     fun writeToConsoleLn(whatToPrint: String?){
         println(whatToPrint)
     }

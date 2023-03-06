@@ -6,7 +6,6 @@ package usersView
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-
 class TypeMessages {
     private val msg = mapOf(
         "name" to "Введите имя: ",

@@ -10,7 +10,6 @@ import kotlinx.serialization.Serializable
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-
 @Serializable
 class Location {
 

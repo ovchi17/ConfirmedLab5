@@ -4,9 +4,21 @@ import usersView.AnswerToUser
 import usersView.ConsoleWriter
 import workCommandsList.*
 
-
+/**
+ * Tokenizator class.
+ *
+ *
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
 class Tokenizator {
 
+    /**
+     * mp method. Keys for command
+     *
+     * @param command Using this parametr we can get the Command
+     * @return command as Command
+     */
     fun mp(command: String): Command? {
         val help: Help = Help()
         val info: Info = Info()
@@ -54,7 +66,13 @@ class Tokenizator {
 
     var writeToConsole: AnswerToUser = AnswerToUser()
 
-
+    /**
+     * tokenizator method. Tokenizate massive to commands with right arguments.
+     *
+     * @param command: Command. Contains the command to be executed.
+     * @param mass: Array of String arguments.
+     * @param workWithCollection: WorkWithCollection contains our main collection
+     */
     fun tokenizator(command: Command, mass: List<String>, workWithCollection: WorkWithCollection){
         var sendList = mutableListOf<Any>()
         if (mass[0] in listOfLong){
@@ -67,6 +85,13 @@ class Tokenizator {
         command.execute(sendList, workWithCollection)
     }
 
+    /**
+     * tokenizatorHelper method. Tokenizate massive to commands with right arguments(use it for add commands).
+     *
+     * @param command: String. Contains the command to be executed, but in String type.
+     * @param mass: Array of String arguments.
+     * @param workWithCollection: WorkWithCollection contains our main collection
+     */
     fun tokenizatorHelper(command: String, mass: List<String>, workWithCollection: WorkWithCollection){
 
         if (command in listString || command in listOfLong || command in listOfNo){

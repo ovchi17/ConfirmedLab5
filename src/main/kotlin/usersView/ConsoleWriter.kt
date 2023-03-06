@@ -6,7 +6,6 @@ package usersView
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-
 class ConsoleWriter {
     var typeMessages: TypeMessages = TypeMessages()
     var answerToUser: AnswerToUser = AnswerToUser()
@@ -25,7 +24,6 @@ class ConsoleWriter {
      *
      * @param printKey String
      */
-
     fun printToConsole(printKey: String){
         answerToUser.writeToConsole(typeMessages.msgToPrint(printKey))
 
