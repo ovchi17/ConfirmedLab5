@@ -1,5 +1,12 @@
 package usersView
 
+/**
+ * TypeMessages class. Contains kays and TypeMessages
+ *
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
+
 class TypeMessages {
     private val msg = mapOf(
         "name" to "Введите имя: ",
@@ -48,6 +55,12 @@ class TypeMessages {
         "recursion" to "Возникла рекурсия"
     )
 
+    /**
+     * readUsersMessage method. Read users messages
+     *
+     * @param printingKey String that represents the printing key
+     * @return message as String
+     */
     fun msgToPrint (printingKey: String): String? {
         return msg[printingKey]
     }

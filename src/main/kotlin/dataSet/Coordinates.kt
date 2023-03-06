@@ -3,6 +3,14 @@ package dataSet
 import javax.management.InvalidAttributeValueException
 import kotlinx.serialization.Serializable
 
+/**
+ * Coordinates. Sub-model of: <code>Route</code>.
+ *
+ * @constructor x: Long, y: Long
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
+
 @Serializable
 class Coordinates {
     constructor(checkX: Long, checkY: Long){

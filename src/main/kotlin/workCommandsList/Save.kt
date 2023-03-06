@@ -14,9 +14,9 @@ class Save: Command {
 
     val answerToUser: AnswerToUser = AnswerToUser()
 
-    private var pathToFile: String = "src/main/kotlin/dataSet/DataOfCollection.json"
+    // private var pathToFile: String = "src/main/kotlin/dataSet/DataOfCollection.json"
 
-    private var fileReader: FileReader = FileReader(pathToFile)
+    // private var fileReader: FileReader = FileReader(pathToFile)
     val consoleWriter: ConsoleWriter = ConsoleWriter()
 
 
@@ -25,7 +25,7 @@ class Save: Command {
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 
-        fileReader.read()
+        // fileReader.read()
         var string: String = rawString
         var copyPriorityQueue: PriorityQueue<Route> = workWithCollection.getCollection()
         val elements = copyPriorityQueue.toList()
@@ -54,9 +54,9 @@ class Save: Command {
         if (copyPriorityQueue.isNotEmpty()) {
             tags += tagsCompilations(tagsStart+tags, mngr)
             tags += tagsEnd
-            File(pathToFile).writeText(tags)
+        //    File(pathToFile).writeText(tags)
         } else {
-            File(pathToFile).writeText("")
+        //    File(pathToFile).writeText("")
         }
         consoleWriter.printToConsoleLn("saved")
     }

@@ -5,6 +5,14 @@ import javax.management.InvalidAttributeValueException
 import java.time.LocalDate;
 import kotlinx.serialization.Serializable
 
+/**
+ * Route. <code>Route</code> - main model.
+ *
+ * @constructor id: Long, name: String, coordinates: Coordinates, creationDate: LocalDate, from: Location, to: Location, distance: Long
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
+
 @Serializable
 class Route {
 
