@@ -7,6 +7,12 @@ import usersView.AnswerToUser
 import usersView.ConsoleWriter
 import java.util.PriorityQueue
 
+/**
+ * Class FilterLessThanDistance. Delete all objects with distance less then.
+ *
+ * @author jutsoNNN
+ * @since 1.0.0
+ */
 class FilterLessThanDistance: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 

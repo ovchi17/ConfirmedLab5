@@ -4,6 +4,12 @@ import controllers.WorkWithCollection
 import usersView.AnswerToUser
 import usersView.ConsoleWriter
 
+/**
+ * Class History. Shows the history of commands
+ *
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
 class History: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 

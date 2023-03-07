@@ -7,6 +7,12 @@ import usersView.AnswerToUser
 import usersView.ConsoleWriter
 import java.util.*
 
+/**
+ * Class RemoveAllByDistance. Delete all objects with the given distance.
+ *
+ * @author jutsoNNN
+ * @since 1.0.0
+ */
 class RemoveAllByDistance: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()

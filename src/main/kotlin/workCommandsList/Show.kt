@@ -7,6 +7,12 @@ import dataSet.RouteComporator
 import usersView.AnswerToUser
 import usersView.ConsoleWriter
 
+/**
+ * Class Show. Show name and id of objects
+ *
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
 class Show: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 

@@ -6,7 +6,12 @@ import usersView.AnswerToUser
 import usersView.ConsoleWriter
 import java.time.LocalDate
 
-
+/**
+ * Class Add. Adds a new object to the collection
+ *
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
 class Add: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 

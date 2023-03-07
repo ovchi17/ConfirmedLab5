@@ -2,6 +2,12 @@ package workCommandsList
 import controllers.WorkWithCollection
 import usersView.*
 
+/**
+ * Class Help. Shows all commands.
+ *
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
 class Help: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 

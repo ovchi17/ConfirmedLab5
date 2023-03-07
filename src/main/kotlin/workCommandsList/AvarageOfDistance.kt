@@ -7,6 +7,12 @@ import usersView.AnswerToUser
 import usersView.ConsoleWriter
 import java.util.*
 
+/**
+ * Class AverageOfDistance. Shows the average distance between all objects in collection
+ *
+ * @author jutsoNNN
+ * @since 1.0.0
+ */
 class AvarageOfDistance: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 

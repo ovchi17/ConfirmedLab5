@@ -9,6 +9,12 @@ import usersView.ConsoleWriter
 import java.time.LocalDate
 import java.util.*
 
+/**
+ * Class AddIfMax. Adds a new object to the collection if Distance parameter is greater than the others.
+ *
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
 class AddIfMax: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 

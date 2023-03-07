@@ -6,7 +6,12 @@ import dataSet.RouteComporator
 import usersView.ConsoleWriter
 import java.util.PriorityQueue
 
-
+/**
+ * Class RemoveFirst. Remove the first object
+ *
+ * @author jutsoNNN
+ * @since 1.0.0
+ */
 class RemoveFirst: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 

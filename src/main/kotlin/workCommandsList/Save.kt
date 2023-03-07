@@ -9,6 +9,12 @@ import java.io.File
 import java.io.FileReader
 import java.util.*
 
+/**
+ * Class Save. Save to file.
+ *
+ * @author jutsoNNN
+ * @since 1.0.0
+ */
 //@Serializable
 class Save: Command {
 

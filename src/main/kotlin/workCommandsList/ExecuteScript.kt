@@ -6,6 +6,12 @@ import org.jetbrains.kotlin.konan.file.File
 import usersView.ConsoleWriter
 import java.io.FileNotFoundException
 
+/**
+ * Class ExecuteScript. Run commands from file.
+ *
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
 class ExecuteScript: Command {
 
     var fileLink = File("")

@@ -8,6 +8,12 @@ import usersView.AnswerToUser
 import usersView.ConsoleWriter
 import java.util.*
 
+/**
+ * Class UpdateId. Update the object with the given id
+ *
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
 class UpdateId: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()

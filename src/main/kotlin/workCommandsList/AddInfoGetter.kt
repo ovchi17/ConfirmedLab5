@@ -5,6 +5,12 @@ import usersView.ConsoleWriter
 import usersView.ReadFromUser
 import usersView.TypeMessages
 
+/**
+ * Class AddInfoGetter. In fact, Add and AddIfMax setter
+ *
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
 class AddInfoGetter {
 
     val consoleWriter: ConsoleWriter = ConsoleWriter()
