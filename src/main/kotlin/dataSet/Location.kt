@@ -13,7 +13,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 class Location {
 
-    constructor(checkX: Long?, checkY: Long, checkZ: Int){
+    constructor(checkX: Long?, checkY: Long?, checkZ: Int?){
         x = checkX
         y = checkY
         z = checkZ
@@ -21,21 +21,15 @@ class Location {
 
 
 
-    private var y: Long
+    private var y: Long?
         set(value){
-            if (value == null){
-                throw InvalidAttributeValueException("Поле не может быть null")
-            }
             field = value
         }
 
     private var x: Long?
 
-    private var z: Int
+    private var z: Int?
         set(value){
-            if (value == null){
-                throw InvalidAttributeValueException("Поле не может быть null")
-            }
             field = value
         }
 
