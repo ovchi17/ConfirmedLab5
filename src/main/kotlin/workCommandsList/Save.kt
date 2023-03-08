@@ -1,5 +1,6 @@
 package workCommandsList
 
+import controllers.Serializer
 import controllers.WorkWithCollection
 import controllers.WorkWithFile
 import dataSet.Route
@@ -23,10 +24,11 @@ class Save: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
         val consoleWriter: ConsoleWriter = ConsoleWriter()
         val workWithFile: WorkWithFile = WorkWithFile()
+        val serializer: Serializer = Serializer()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
-        val p = workWithCollection.collectionToList(collection)
-        val jsonString = workWithCollection.listToJson(p)
+        val list = workWithCollection.collectionToList(collection)
+        val jsonString = serializer.serialize(list)
         workWithFile.writeToFile(collection, pathToFile, jsonString)
         consoleWriter.printToConsoleLn("saved")
     }
