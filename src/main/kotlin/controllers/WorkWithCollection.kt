@@ -2,10 +2,12 @@ package controllers
 
 import java.util.PriorityQueue
 import dataSet.*
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import java.io.File
+import java.io.FileReader
 import java.time.Instant
-import java.util.Collections.max
 import java.util.Date
-import kotlin.math.max
 
 /**
  * WorkWithCollection class. Implements CollectionMainCommands
@@ -79,8 +81,12 @@ class WorkWithCollection: CollectionMainCommands {
         return initData
     }
 
-//    fun saveCollection(): Data{
-//
-//    }
+    fun collectionToList(collection: PriorityQueue<Route>): List<Route> {
+        return priorityQueueCollection.toList()
+    }
+
+    fun listToJson(whatToSerialize: List<Route>): String {
+        return Json.encodeToString(whatToSerialize)
+    }
 
 }

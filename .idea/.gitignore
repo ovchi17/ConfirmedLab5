@@ -24,3 +24,21 @@ gradlew.bat
 .gradle/
 gradle/
 *.iml
+
+# Compiled class file
+*.class
+*.jar
+*.MF
+
+# Log file
+*.log
+*.txt
+
+#other
+.idea/
+build/
+gradlew
+gradlew.bat
+.gradle/
+gradle/
+*.iml

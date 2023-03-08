@@ -1,13 +1,15 @@
 package workCommandsList
 
 import controllers.WorkWithCollection
+import controllers.WorkWithFile
 import dataSet.Route
 import dataSet.RouteComporator
-import usersView.AnswerToUser
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import usersView.ConsoleWriter
 import java.io.File
 import java.io.FileReader
-import java.util.*
+import java.util.PriorityQueue
 
 /**
  * Class Save. Save to file.
@@ -15,55 +17,17 @@ import java.util.*
  * @author jutsoNNN
  * @since 1.0.0
  */
-//@Serializable
 class Save: Command {
-
-    val answerToUser: AnswerToUser = AnswerToUser()
-
-    // private var pathToFile: String = "src/main/kotlin/dataSet/DataOfCollection.json"
-
-    // private var fileReader: FileReader = FileReader(pathToFile)
-    val consoleWriter: ConsoleWriter = ConsoleWriter()
-
-
-    fun tagsCompilations (rawString: String, workWithCollection: WorkWithCollection): String {
-
+     private var pathToFile: String = "src/main/kotlin/dataSet/DataOfCollection.json"
+     private var fileReader: FileReader = FileReader(pathToFile)
+    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+        val consoleWriter: ConsoleWriter = ConsoleWriter()
+        val workWithFile: WorkWithFile = WorkWithFile()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
-
-        // fileReader.read()
-        var string: String = rawString
-        var copyPriorityQueue: PriorityQueue<Route> = workWithCollection.getCollection()
-        val elements = copyPriorityQueue.toList()
-        for (element in elements) {
-            string += "\t \"element\": {\n"
-            string += "\t\t \"id\" : \"${element.id}\", \n" +
-                    "\t\t \"name\" : \"${element.name}\", \n" +
-                    "\t\t \"coordinates\" : \"${element.coordinates}\", \n" +
-                    "\t\t \"creationDate\" : \"${element.creationDate}\", \n" +
-                    "\t\t \"from\" : \"${element.from}\", \n" +
-                    "\t\t \"to\" : \"${element.to}\", \n" +
-                    "\t\t \"distance\" : \"${element.distance}\" \n" +
-                    "\t } \n"
-        }
-        return string
-    }
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
-
-        var tags: String = ""
-        val tagsStart: String = "{\n"
-        val tagsEnd: String = "}"
-
-        var copyPriorityQueue: PriorityQueue<Route> = workWithCollection.getCollection()
-        var mngr = workWithCollection
-
-        if (copyPriorityQueue.isNotEmpty()) {
-            tags += tagsCompilations(tagsStart+tags, mngr)
-            tags += tagsEnd
-        //    File(pathToFile).writeText(tags)
-        } else {
-        //    File(pathToFile).writeText("")
-        }
+        val p = workWithCollection.collectionToList(collection)
+        val jsonString = workWithCollection.listToJson(p)
+        workWithFile.writeToFile(collection, pathToFile, jsonString)
         consoleWriter.printToConsoleLn("saved")
     }
 }
