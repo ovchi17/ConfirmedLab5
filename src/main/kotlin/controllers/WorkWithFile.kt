@@ -8,7 +8,7 @@ import java.util.*
 
 class WorkWithFile {
 
-    fun checkFile(collection: PriorityQueue<Route>): Boolean{
+    fun checkFile(pathToFile: String): Boolean{
         val collection = PriorityQueue<Route>(RouteComporator())
         var pathToFile: String = "src/main/kotlin/dataSet/DataOfCollection.json"
         var fileReader: FileReader = FileReader(pathToFile)
@@ -22,6 +22,15 @@ class WorkWithFile {
 
     fun writeToFile(collection: PriorityQueue<Route>, pathToFile: String, whatToWrite: String){
         File(pathToFile).writeText(whatToWrite)
+    }
+
+    fun readFile(file: File): String {
+        FileReader(file).use {
+            val chars = CharArray(file.length().toInt())
+            it.read(chars)
+            val fileContent = String(chars)
+            return (fileContent)
+        }
     }
 
 }

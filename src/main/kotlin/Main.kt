@@ -1,6 +1,10 @@
 import controllers.*
+import dataSet.Route
 import workCommandsList.*
 import usersView.*
+import java.io.File
+import java.io.FileReader
+import java.util.*
 
 
 fun main() {
@@ -51,6 +55,15 @@ fun main() {
                          "average_of_distance" to averageOfDistance,
                          "filter_less_than_distance" to filterLessThanDistance)
 
+    val workWithFile: WorkWithFile = WorkWithFile()
+    var pathToFile: String = "src/main/kotlin/dataSet/DataOfCollection.json"
+    var fileReader: FileReader = FileReader(pathToFile)
+    val serializer: Serializer = Serializer()
+    if (!workWithFile.checkFile(pathToFile)){
+        val list = serializer.deserialize(workWithFile.readFile(File(pathToFile)))
+        workWithCollection.listToCollection(list)
+//        workWithCollection.addElementToCollection() ?????, нужно понять, как передать "объекты", либо сделать новую команду добавления в WWC
+    }
 
     while (true){
         writeToConsole.writeToConsole("> ")
