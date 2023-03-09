@@ -61,8 +61,8 @@ fun main() {
     val serializer: Serializer = Serializer()
     if (!workWithFile.checkFile(pathToFile)){
         val list = serializer.deserialize(workWithFile.readFile(File(pathToFile)))
-        workWithCollection.listToCollection(list)
-//        workWithCollection.addElementToCollection() ?????, нужно понять, как передать "объекты", либо сделать новую команду добавления в WWC
+        val collection: PriorityQueue<Route> = workWithCollection.listToCollection(list)
+        workWithCollection.addElementToCollection(collection.element())
     }
 
     while (true){
