@@ -76,7 +76,12 @@ class Tokenizator {
     fun tokenizator(command: Command, mass: List<String>, workWithCollection: WorkWithCollection){
         var sendList = mutableListOf<Any>()
         if (mass[0] in listOfLong){
-            val newToken = mass[1].toLong()
+            var newToken:Long = 1
+            try {
+                newToken = mass[1].toLong()
+            }catch (e: NumberFormatException){
+                writeToConsole.writeToConsoleLn("Ошибка")
+            }
             sendList.add(newToken)
         }else if(mass[0] in listString){
             val newToken = mass[1].toString()

@@ -22,8 +22,8 @@ class AddInfoGetter {
         var name: String? = " "
         var resultReturn = " "
         if (parametr == "noInfo"){
-            consoleWriter.printToConsole("name")
             while (true){
+                consoleWriter.printToConsole("name")
                 name = readFromUser.readUsersMessage()
                 if (name != ""){
                     resultReturn = name
@@ -60,7 +60,7 @@ class AddInfoGetter {
             }
         }catch (e: NumberFormatException){
             if (coord1!= ""){
-                answerToUser.writeToConsoleLn("Ошибка")
+                answerToUser.writeToConsoleLn("Ошибка. Установлено стандартное значение null")
             }
         }
         return resultReturn
@@ -94,7 +94,7 @@ class AddInfoGetter {
                 }
             }
         }catch (e: NumberFormatException){
-            answerToUser.writeToConsoleLn("Ошибка")
+            answerToUser.writeToConsoleLn("Ошибка. Установлено стандартное значение 0")
         }
         return resultReturn
     }
@@ -115,7 +115,7 @@ class AddInfoGetter {
             }
         }catch (e: NumberFormatException){
             if (location1!= ""){
-                answerToUser.writeToConsoleLn("Ошибка")
+                answerToUser.writeToConsoleLn("Ошибка. Установлено стандартное значение null")
             }
         }
         return resultReturn
@@ -144,7 +144,7 @@ class AddInfoGetter {
                 resultReturn = location2.toLong()
             }
         }catch (e: NumberFormatException){
-            answerToUser.writeToConsoleLn("Ошибка")
+            answerToUser.writeToConsoleLn("Ошибка. Установлено стандартное значение 0")
         }
         return resultReturn
     }
@@ -172,7 +172,7 @@ class AddInfoGetter {
                 resultReturn = location3.toInt()
             }
         }catch (e: NumberFormatException){
-            answerToUser.writeToConsoleLn("Ошибка")
+            answerToUser.writeToConsoleLn("Ошибка. Установлено стандартное значение 0")
         }
         return resultReturn
     }
@@ -193,7 +193,7 @@ class AddInfoGetter {
             }
         }catch (e: NumberFormatException){
             if (location12!= ""){
-                answerToUser.writeToConsoleLn("Ошибка")
+                answerToUser.writeToConsoleLn("Ошибка. Установлено стандартное значение null")
             }
         }
         return resultReturn
@@ -222,7 +222,7 @@ class AddInfoGetter {
                 resultReturn = location22.toLong()
             }
         }catch (e: NumberFormatException){
-            answerToUser.writeToConsoleLn("Ошибка")
+            answerToUser.writeToConsoleLn("Ошибка. Установлено стандартное значение 0")
         }
         return resultReturn
     }
@@ -250,7 +250,7 @@ class AddInfoGetter {
                 resultReturn = location32.toInt()
             }
         }catch (e: NumberFormatException){
-            answerToUser.writeToConsoleLn("Ошибка")
+            answerToUser.writeToConsoleLn("Ошибка. Установлено стандартное значение 0")
         }
         return resultReturn
     }
@@ -265,6 +265,7 @@ class AddInfoGetter {
                 while (true){
                     distance = readFromUser.readUsersMessage()
                     if (distance != ""){
+                        resultReturn = distance.toLong()
                         if (resultReturn > 1){
                             break
                         }else{
@@ -272,7 +273,7 @@ class AddInfoGetter {
                             consoleWriter.printToConsole("distance")
                         }
                     }else{
-                        answerToUser.writeToConsoleLn("Введенное значение должно быть больше 1")
+                        answerToUser.writeToConsoleLn("Введенное не должно равняться 0")
                         consoleWriter.printToConsole("distance")
                     }
                 }
@@ -284,7 +285,7 @@ class AddInfoGetter {
                 }
             }
         }catch (e: NumberFormatException){
-            answerToUser.writeToConsoleLn("Ошибка")
+            answerToUser.writeToConsoleLn("Ошибка, установлено стандратное значение: 2")
         }
 
         return resultReturn

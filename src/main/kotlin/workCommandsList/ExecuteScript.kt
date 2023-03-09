@@ -14,6 +14,7 @@ import java.io.FileNotFoundException
  */
 class ExecuteScript: Command {
 
+    var getLink = ""
     var fileLink = File("")
     var consoleWriter = ConsoleWriter()
     var stopRecursion = 5
@@ -27,14 +28,10 @@ class ExecuteScript: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 
 
-        try {
-            fileLink = File(str[0] as String)
-        } catch (e: FileNotFoundException) {
-            consoleWriter.printToConsoleLn("noFile")
-            return
-        }
+        getLink = str[0] as String
 
-        try {
+        if (File(getLink).exists){
+            fileLink = File(getLink)
             if (stopRecursion >= checkerRecursion) {
                 val commandFromFile = fileLink.readStrings()
                 for (line in commandFromFile) {
@@ -65,9 +62,8 @@ class ExecuteScript: Command {
             }else{
                 consoleWriter.printToConsoleLn("recursion")
             }
-        } catch (e: FileNotFoundException) {
+        }else{
             consoleWriter.printToConsoleLn("noFile")
-            return
         }
 
         checkerRecursion -= 1
