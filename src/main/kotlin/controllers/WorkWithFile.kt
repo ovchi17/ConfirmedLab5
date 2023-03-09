@@ -10,7 +10,7 @@ class WorkWithFile {
 
     fun checkFile(pathToFile: String): Boolean{
         val collection = PriorityQueue<Route>(RouteComporator())
-        var pathToFile: String = "src/main/kotlin/dataSet/DataOfCollection.json"
+        val pathToFile: String = System.getenv("DataOfCollection")
         var fileReader: FileReader = FileReader(pathToFile)
         val file = File(pathToFile)
         var isEmpty = true

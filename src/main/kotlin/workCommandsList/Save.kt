@@ -19,7 +19,7 @@ import java.util.PriorityQueue
  * @since 1.0.0
  */
 class Save: Command {
-     private var pathToFile: String = "src/main/kotlin/dataSet/DataOfCollection.json"
+     private var pathToFile: String = System.getenv("DataOfCollection")
      private var fileReader: FileReader = FileReader(pathToFile)
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
         val consoleWriter: ConsoleWriter = ConsoleWriter()
