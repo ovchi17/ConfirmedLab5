@@ -62,9 +62,14 @@ fun main() {
     if (!workWithFile.checkFile(pathToFile)){
         val list = serializer.deserialize(workWithFile.readFile(File(pathToFile)))
         val collection: PriorityQueue<Route> = workWithCollection.listToCollection(list)
+        var maxId: Int = 0
         for(i in list.indices){
+            if (collection.element().id > maxId){
+                maxId = collection.element().id.toInt()
+            }
             workWithCollection.addElementToCollection(collection.toList().get(i))
         }
+        workWithCollection.idManager = maxId.toLong()
     }
 
     while (true){

@@ -52,6 +52,7 @@ class ExecuteScript: Command {
                                 var addList = mutableListOf<String>()
                                 addList.add(specialForAdd)
                                 addList.add(params)
+                                params = ""
                                 tokenizator.tokenizatorHelper(specialForAdd, addList, workWithCollection)
                             }
                         }else{

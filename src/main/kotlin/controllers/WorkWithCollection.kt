@@ -23,6 +23,7 @@ class WorkWithCollection: CollectionMainCommands {
     private var priorityQueueCollection = PriorityQueue<Route>(RouteComporator())
     var initData = Date.from(Instant.now())
     var commandHistory:MutableList<String> = mutableListOf()
+//    EEEE
     var idManager: Long = 1;
 
     /**
