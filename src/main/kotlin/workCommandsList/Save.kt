@@ -10,7 +10,7 @@ import java.io.FileReader
 import java.util.PriorityQueue
 
 /**
- * Class Save. Save to file.
+ * Class Save. Save to file in JSON format.
  *
  * @author jutsoNNN
  * @since 1.0.0

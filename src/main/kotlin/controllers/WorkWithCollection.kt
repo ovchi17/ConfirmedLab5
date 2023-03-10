@@ -77,10 +77,22 @@ class WorkWithCollection: CollectionMainCommands {
         return initData
     }
 
+    /**
+     * collectionToList method. Convert Collection to List
+     *
+     * @param collection: PriorityQueue<Route>. PriorityQueue Collection that heeded to convert
+     * @return priorityQueueCollection.toList(). Returns PriorityQueue Collection in List format
+     */
     fun collectionToList(collection: PriorityQueue<Route>): List<Route> {
         return priorityQueueCollection.toList()
     }
 
+    /**
+     * listToCollection method. Convert List to Collection
+     *
+     * @param list: List<Route>. List that heeded to convert
+     * @return list.toCollection(PriorityQueue<Route>(RouteComporator())). Returns List in PriorityQueue Collection format
+     */
     fun listToCollection(list: List<Route>): PriorityQueue<Route>{
         return list.toCollection(PriorityQueue<Route>(RouteComporator()))
     }
