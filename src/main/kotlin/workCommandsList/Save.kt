@@ -5,6 +5,7 @@ import controllers.WorkWithCollection
 import controllers.WorkWithFile
 import dataSet.Route
 import dataSet.RouteComporator
+import kotlinx.serialization.json.Json
 import usersView.ConsoleWriter
 import java.io.FileReader
 import java.util.PriorityQueue
@@ -26,6 +27,7 @@ class Save: Command {
          collection.addAll(workWithCollection.getCollection())
          val list = workWithCollection.collectionToList(collection)
          val jsonString = serializer.serialize(list)
+         println(jsonString)
          workWithFile.writeToFile(collection, pathToFile, jsonString)
          consoleWriter.printToConsoleLn("saved")
      }

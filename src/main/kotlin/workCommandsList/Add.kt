@@ -61,7 +61,13 @@ class Add: Command {
         to = Location(location1, location2, location3)
         from = Location(location1_2, location2_2, location3_2)
 
-        val routeToAdd: Route = Route(id, name, coordinates, creationDate, from, to, distance)
+        val routeToAdd: Route = Route(id,
+            name = name,
+            coordinates = coordinates,
+            creationDate = creationDate,
+            from = from,
+            to = to,
+            distance = distance)
 
         workWithCollection.addElementToCollection(routeToAdd)
 

@@ -9,7 +9,7 @@ import java.util.*
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-internal class ClearTest {
+internal class clearTest {
 
     @Test
     fun `Test clear functionality`() {
