@@ -5,15 +5,11 @@ import dataSet.Coordinates
 import dataSet.Location
 import dataSet.Route
 import dataSet.RouteComporator
-import io.mockk.InternalPlatformDsl.toArray
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import workCommandsList.Add
-import workCommandsList.Clear
-import workCommandsList.Show
 import java.time.LocalDate
 import java.util.*
-import kotlin.collections.List
 
 internal class FormattingTest {
 

@@ -5,10 +5,7 @@ import controllers.WorkWithCollection
 import dataSet.Route
 import dataSet.RouteComporator
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
-import org.junit.jupiter.api.function.Executable
 import workCommandsList.Add
 import workCommandsList.ExecuteScript
 import workCommandsList.Show

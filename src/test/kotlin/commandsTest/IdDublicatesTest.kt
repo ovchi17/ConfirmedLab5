@@ -1,11 +1,7 @@
 package commandsTest
 
 import controllers.WorkWithCollection
-import dataSet.Route
-import dataSet.RouteComporator
 import workCommandsList.Add
-import workCommandsList.Clear
-import java.util.*
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import workCommandsList.RemoveById
