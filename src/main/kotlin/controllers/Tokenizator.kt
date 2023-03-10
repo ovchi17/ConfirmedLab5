@@ -80,7 +80,7 @@ class Tokenizator {
             try {
                 newToken = mass[1].toLong()
             }catch (e: NumberFormatException){
-                writeToConsole.writeToConsoleLn("Ошибка")
+                throw CommandException("Ошибочный параметр для команды")
             }
             sendList.add(newToken)
         }else if(mass[0] in listString){

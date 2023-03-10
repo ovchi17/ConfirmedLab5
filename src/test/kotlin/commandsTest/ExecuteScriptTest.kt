@@ -1,16 +1,19 @@
 package commandsTest
 
+import controllers.CommandException
 import controllers.WorkWithCollection
 import dataSet.Route
 import dataSet.RouteComporator
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.function.Executable
 import workCommandsList.Add
 import workCommandsList.ExecuteScript
 import workCommandsList.Show
 import java.util.*
+import kotlin.test.assertFailsWith
 
 internal class ExecuteScriptTest {
 
@@ -40,12 +43,10 @@ internal class ExecuteScriptTest {
         val sendList = mutableListOf<Any>()
         sendList.add("ex2.txt")
 
-        val thrown: StackOverflowError = Assertions.assertThrows(
-            StackOverflowError::class.java,
-            Executable {executeScript.execute(sendList, workWithCollection)})
+        assertFailsWith<CommandException> {
+            executeScript.execute(sendList, workWithCollection)
+        }
 
-        val exception = StackOverflowError()
-        assertEquals("recursion!", exception)
     }
 
     @Test

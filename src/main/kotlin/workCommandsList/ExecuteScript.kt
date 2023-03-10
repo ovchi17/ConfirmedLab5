@@ -1,5 +1,6 @@
 package workCommandsList
 
+import controllers.CommandException
 import controllers.Tokenizator
 import controllers.WorkWithCollection
 import org.jetbrains.kotlin.konan.file.File
@@ -60,7 +61,7 @@ class ExecuteScript: Command {
                     }
                 }
             }else{
-                consoleWriter.printToConsoleLn("recursion")
+                throw CommandException(consoleWriter.printToConsoleLn("recursion").toString())
             }
         }else{
             consoleWriter.printToConsoleLn("noFile")
