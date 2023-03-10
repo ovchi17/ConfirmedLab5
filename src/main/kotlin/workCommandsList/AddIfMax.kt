@@ -18,7 +18,7 @@ import java.util.*
 class AddIfMax: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
 
-        var parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
+        val parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
         val addSet: AddInfoGetter = AddInfoGetter()
         val consoleWriter: ConsoleWriter = ConsoleWriter()
 
@@ -40,13 +40,13 @@ class AddIfMax: Command {
         collection.addAll(workWithCollection.getCollection())
 
         workWithCollection.idManager++
-        var id: Long = workWithCollection.idManager
-        var name: String
-        var coordinates: Coordinates
-        var creationDate: LocalDate = LocalDate.now()
-        var from: Location
-        var to: Location
-        var distance: Long
+        val id: Long = workWithCollection.idManager
+        val name: String
+        val coordinates: Coordinates
+        val creationDate: LocalDate = LocalDate.now()
+        val from: Location
+        val to: Location
+        val distance: Long
 
         name = addSet.name(parametrs[0])
         val coord1: Long? = addSet.coord1(parametrs[1])

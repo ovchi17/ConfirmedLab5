@@ -17,7 +17,7 @@ class RemoveAllByDistance: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
-        var checkDistance = str[0]
+        val checkDistance = str[0]
 
 
         val consoleWriter: ConsoleWriter = ConsoleWriter()

@@ -3,7 +3,6 @@ package workCommandsList
 import usersView.AnswerToUser
 import usersView.ConsoleWriter
 import usersView.ReadFromUser
-import usersView.TypeMessages
 
 /**
  * Class AddInfoGetter. In fact, Add and AddIfMax setter

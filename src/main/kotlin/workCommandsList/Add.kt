@@ -2,7 +2,6 @@ package workCommandsList
 
 import controllers.WorkWithCollection
 import dataSet.*
-import usersView.AnswerToUser
 import usersView.ConsoleWriter
 import java.time.LocalDate
 
@@ -17,17 +16,17 @@ class Add: Command {
 
         val addSet: AddInfoGetter = AddInfoGetter()
         val consoleWriter: ConsoleWriter = ConsoleWriter()
-        var parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
+        val parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
 
         workWithCollection.idManager++
         var id: Long = workWithCollection.idManager
-        var name: String?
-        var coordinates: Coordinates
-        var creationDate: LocalDate = LocalDate.now()
-        var from: Location
-        var to: Location
-        var distance: Long
-        var stopper: Long = 1
+        val name: String?
+        val coordinates: Coordinates
+        val creationDate: LocalDate = LocalDate.now()
+        val from: Location
+        val to: Location
+        val distance: Long
+        val stopper: Long = 1
 
         if (str[0] != stopper){
             id = str[0] as Long

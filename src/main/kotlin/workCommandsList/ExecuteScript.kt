@@ -4,7 +4,6 @@ import controllers.Tokenizator
 import controllers.WorkWithCollection
 import org.jetbrains.kotlin.konan.file.File
 import usersView.ConsoleWriter
-import java.io.FileNotFoundException
 
 /**
  * Class ExecuteScript. Run commands from file.
@@ -38,7 +37,7 @@ class ExecuteScript: Command {
                     val args = line.split(" ")
                     if (args[0] == "execute_script") {
                         checkerRecursion++
-                        var sendList = mutableListOf<Any>()
+                        val sendList = mutableListOf<Any>()
                         sendList.add(args[1])
                         execute(sendList, workWithCollection)
                     }else if (args[0] == "add" || args[0] == "add_if_max"){
@@ -49,7 +48,7 @@ class ExecuteScript: Command {
                             params = params + line + " "
                             addChecker -= 1
                             if (addChecker == 0){
-                                var addList = mutableListOf<String>()
+                                val addList = mutableListOf<String>()
                                 addList.add(specialForAdd)
                                 addList.add(params)
                                 params = ""

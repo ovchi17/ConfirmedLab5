@@ -1,7 +1,7 @@
 package controllers
 
+import workCommandsList.AddIfMax
 import usersView.AnswerToUser
-import usersView.ConsoleWriter
 import workCommandsList.*
 
 /**
@@ -74,7 +74,7 @@ class Tokenizator {
      * @param workWithCollection: WorkWithCollection contains our main collection
      */
     fun tokenizator(command: Command, mass: List<String>, workWithCollection: WorkWithCollection){
-        var sendList = mutableListOf<Any>()
+        val sendList = mutableListOf<Any>()
         if (mass[0] in listOfLong){
             var newToken:Long = 1
             try {
@@ -102,7 +102,7 @@ class Tokenizator {
         if (command in listString || command in listOfLong || command in listOfNo){
             val commandRight: Command? = mp(command)
             if (commandRight != null) {
-                var sendList = mutableListOf<Any>()
+                val sendList = mutableListOf<Any>()
 
                 if (command == "add" || command == "add_if_max") {
                     sendList.add(1.toLong())

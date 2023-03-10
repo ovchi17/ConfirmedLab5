@@ -22,7 +22,7 @@ class FilterLessThanDistance: Command {
         val consoleWriter: ConsoleWriter = ConsoleWriter()
         val answerToUser: AnswerToUser = AnswerToUser()
 
-        var checkDistance = str[0]
+        val checkDistance = str[0]
 
         if (collection.size == 0){
             consoleWriter.printToConsoleLn("emptyCollection")

@@ -17,7 +17,7 @@ class RemoveById: Command {
     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
-        var checkId = str[0]
+        val checkId = str[0]
 
         val consoleWriter: ConsoleWriter = ConsoleWriter()
         val collection = PriorityQueue<Route>(RouteComporator())

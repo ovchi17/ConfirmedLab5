@@ -22,13 +22,13 @@ class AvarageOfDistance: Command {
 
         val answerToUser: AnswerToUser = AnswerToUser()
 
-        var sizeCollection = collection.toList()
+        val sizeCollection = collection.toList()
 
         if (collection.size == 0){
             consoleWriter.printToConsoleLn("emptyCollection")
         }else{
             var distances: Long = 0
-            var result: Double
+            val result: Double
             for(i in 0..(sizeCollection.count()-1)){
                 distances += sizeCollection.get(i).distance
             }
