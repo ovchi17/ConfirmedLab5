@@ -56,7 +56,7 @@ fun main() {
                          "filter_less_than_distance" to filterLessThanDistance)
 
     val workWithFile: WorkWithFile = WorkWithFile()
-    var pathToFile: String = System.getenv("DataOfCollection")
+    val pathToFile: String = System.getenv("DataOfCollection")
     var fileReader: FileReader = FileReader(pathToFile)
     val serializer: Serializer = Serializer()
     if (!workWithFile.checkFile(pathToFile)){

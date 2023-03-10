@@ -121,4 +121,9 @@ class Tokenizator {
             writeToConsole.writeToConsoleLn("Ошибка в исполняемом скрипте")
         }
     }
+
+    fun getCommand(command: String): Command? {
+        val commandGet: Command? = mp(command)
+        return commandGet
+    }
 }

@@ -21,15 +21,15 @@ import java.util.PriorityQueue
 class Save: Command {
      private var pathToFile: String = System.getenv("DataOfCollection")
      private var fileReader: FileReader = FileReader(pathToFile)
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
-        val consoleWriter: ConsoleWriter = ConsoleWriter()
-        val workWithFile: WorkWithFile = WorkWithFile()
-        val serializer: Serializer = Serializer()
-        val collection = PriorityQueue<Route>(RouteComporator())
-        collection.addAll(workWithCollection.getCollection())
-        val list = workWithCollection.collectionToList(collection)
-        val jsonString = serializer.serialize(list)
-        workWithFile.writeToFile(collection, pathToFile, jsonString)
-        consoleWriter.printToConsoleLn("saved")
-    }
+     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+         val consoleWriter: ConsoleWriter = ConsoleWriter()
+         val workWithFile: WorkWithFile = WorkWithFile()
+         val serializer: Serializer = Serializer()
+         val collection = PriorityQueue<Route>(RouteComporator())
+         collection.addAll(workWithCollection.getCollection())
+         val list = workWithCollection.collectionToList(collection)
+         val jsonString = serializer.serialize(list)
+         workWithFile.writeToFile(collection, pathToFile, jsonString)
+         consoleWriter.printToConsoleLn("saved")
+     }
 }
