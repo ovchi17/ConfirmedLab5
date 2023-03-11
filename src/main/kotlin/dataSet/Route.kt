@@ -13,8 +13,8 @@ data class Route(
     var id:Long = (1..10000).random().toLong(),
     var name: String,
     @Contextual
-    //@Serializable(DateAsStringSerializer::class)
-    var creationDate: LocalDate = LocalDate.now(),
+    @Serializable(DateAsStringSerializer::class)
+    var creationDate: LocalDate,
     var from: Location,
     var to: Location,
     var distance: Long,
