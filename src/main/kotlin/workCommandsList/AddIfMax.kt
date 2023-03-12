@@ -20,7 +20,6 @@ class AddIfMax: Command() {
 
         val parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
         val addSet: AddInfoGetter = AddInfoGetter()
-        val consoleWriter: ConsoleWriter = ConsoleWriter()
 
         if (str.size > 1){
             val getParams = (str[1] as String).split(" ")

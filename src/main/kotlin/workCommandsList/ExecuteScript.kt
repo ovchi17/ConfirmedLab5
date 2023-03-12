@@ -16,7 +16,6 @@ class ExecuteScript: Command() {
 
     var getLink = ""
     var fileLink = File("")
-    var consoleWriter = ConsoleWriter()
     var stopRecursion = 5
     var checkerRecursion = 0
     var tokenizator = Tokenizator()

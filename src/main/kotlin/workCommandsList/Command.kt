@@ -4,6 +4,7 @@ import controllers.CollectionMainCommands
 import controllers.WorkWithCollection
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
+import usersView.ConsoleWriter
 
 /**
  * Interface Command.
@@ -21,6 +22,7 @@ abstract class Command: KoinComponent {
      */
 
     val workWithCollection: CollectionMainCommands by inject()
+    val consoleWriter: ConsoleWriter by inject()
     abstract fun execute(str: List<Any>)
 
 }

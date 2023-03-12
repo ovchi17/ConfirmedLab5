@@ -19,8 +19,6 @@ class RemoveAllByDistance: Command() {
 
         val checkDistance = str[0]
 
-
-        val consoleWriter: ConsoleWriter = ConsoleWriter()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 

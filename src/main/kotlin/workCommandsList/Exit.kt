@@ -12,7 +12,6 @@ import kotlin.system.exitProcess
  */
 class Exit: Command(){
     override fun execute(str: List<Any>) {
-        val consoleWriter: ConsoleWriter = ConsoleWriter()
         consoleWriter.printToConsoleLn("end")
         exitProcess(0)
     }

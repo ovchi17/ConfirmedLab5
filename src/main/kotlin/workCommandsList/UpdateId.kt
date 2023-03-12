@@ -19,7 +19,6 @@ class UpdateId: Command() {
         val answerToUser: AnswerToUser = AnswerToUser()
         val checkId = str[0]
 
-        val consoleWriter: ConsoleWriter = ConsoleWriter()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
         val add: Add = Add()

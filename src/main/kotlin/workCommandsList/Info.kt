@@ -14,7 +14,6 @@ class Info: Command() {
     override fun execute(str: List<Any>) {
 
         val answerToUser: AnswerToUser = AnswerToUser()
-        val consoleWriter: ConsoleWriter = ConsoleWriter()
 
         val collection = workWithCollection.getCollection()
 

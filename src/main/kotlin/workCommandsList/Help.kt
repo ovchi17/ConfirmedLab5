@@ -12,8 +12,6 @@ import usersView.*
 class Help: Command() {
     override fun execute(str: List<Any>) {
 
-        val consoleWriter: ConsoleWriter = ConsoleWriter()
-
         consoleWriter.printToConsoleLn("***")
 
         consoleWriter.printToConsoleLn("helpHelp")

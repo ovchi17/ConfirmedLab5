@@ -17,7 +17,6 @@ class Show: Command() {
     override fun execute(str: List<Any>) {
 
         val answerToUser: AnswerToUser = AnswerToUser()
-        val consoleWriter: ConsoleWriter = ConsoleWriter()
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())

@@ -16,7 +16,6 @@ import java.util.*
 class AvarageOfDistance: Command() {
     override fun execute(str: List<Any>) {
 
-        val consoleWriter: ConsoleWriter = ConsoleWriter()
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 

@@ -15,7 +15,6 @@ class Add: Command() {
     override fun execute(str: List<Any>) {
 
         val addSet: AddInfoGetter = AddInfoGetter()
-        val consoleWriter: ConsoleWriter = ConsoleWriter()
         val parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
 
         workWithCollection.idPlusOne()
