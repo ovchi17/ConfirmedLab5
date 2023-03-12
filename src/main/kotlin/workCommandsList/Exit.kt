@@ -10,8 +10,8 @@ import kotlin.system.exitProcess
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class Exit: Command{
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class Exit: Command(){
+    override fun execute(str: List<Any>) {
         val consoleWriter: ConsoleWriter = ConsoleWriter()
         consoleWriter.printToConsoleLn("end")
         exitProcess(0)

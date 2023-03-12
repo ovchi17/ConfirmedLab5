@@ -9,8 +9,8 @@ import usersView.*
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class Help: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class Help: Command() {
+    override fun execute(str: List<Any>) {
 
         val consoleWriter: ConsoleWriter = ConsoleWriter()
 

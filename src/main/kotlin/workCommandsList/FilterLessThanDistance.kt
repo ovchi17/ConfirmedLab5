@@ -13,8 +13,8 @@ import java.util.PriorityQueue
  * @author jutsoNNN
  * @since 1.0.0
  */
-class FilterLessThanDistance: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class FilterLessThanDistance: Command() {
+    override fun execute(str: List<Any>) {
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())

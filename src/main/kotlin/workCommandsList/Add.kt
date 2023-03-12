@@ -11,15 +11,15 @@ import java.time.LocalDate
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class Add: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class Add: Command() {
+    override fun execute(str: List<Any>) {
 
         val addSet: AddInfoGetter = AddInfoGetter()
         val consoleWriter: ConsoleWriter = ConsoleWriter()
         val parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
 
-        workWithCollection.idManager++
-        var id: Long = workWithCollection.idManager
+        workWithCollection.idPlusOne()
+        var id: Long = workWithCollection.getId()
         val name: String?
         val coordinates: Coordinates
         val creationDate: LocalDate = LocalDate.now()

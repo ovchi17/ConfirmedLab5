@@ -10,8 +10,8 @@ import usersView.ConsoleWriter
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class History: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class History: Command() {
+    override fun execute(str: List<Any>) {
 
         val answerToUser: AnswerToUser = AnswerToUser()
         val consoleWriter: ConsoleWriter = ConsoleWriter()

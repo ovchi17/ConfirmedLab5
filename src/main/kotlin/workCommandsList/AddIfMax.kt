@@ -15,8 +15,8 @@ import java.util.*
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class AddIfMax: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class AddIfMax: Command() {
+    override fun execute(str: List<Any>) {
 
         val parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
         val addSet: AddInfoGetter = AddInfoGetter()
@@ -39,8 +39,8 @@ class AddIfMax: Command {
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 
-        workWithCollection.idManager++
-        val id: Long = workWithCollection.idManager
+        workWithCollection.idPlusOne()
+        val id: Long = workWithCollection.getId()
         val name: String
         val coordinates: Coordinates
         val creationDate: LocalDate = LocalDate.now()

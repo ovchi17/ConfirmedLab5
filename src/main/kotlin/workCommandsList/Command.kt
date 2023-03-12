@@ -1,6 +1,9 @@
 package workCommandsList
 
+import controllers.CollectionMainCommands
 import controllers.WorkWithCollection
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
 /**
  * Interface Command.
@@ -8,7 +11,7 @@ import controllers.WorkWithCollection
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-interface Command {
+abstract class Command: KoinComponent {
 
     /**
      * execute method. Using in all workCommandsList
@@ -16,6 +19,8 @@ interface Command {
      * @param str: List<Any>
      * @param wrk: WorkWithCollection
      */
-    fun execute(str: List<Any>, wrk: WorkWithCollection)
+
+    val workWithCollection: CollectionMainCommands by inject()
+    abstract fun execute(str: List<Any>)
 
 }

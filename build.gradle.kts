@@ -17,11 +17,14 @@ repositories {
 dependencies {
     val kotlinVersion = "1.8.0"
     val mockkVersion = "1.13.4"
+    val koinVersion = "3.2.2"
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     testImplementation("io.mockk:mockk:${mockkVersion}")
     implementation(kotlin("serialization", version = kotlinVersion))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0-RC")
+    implementation(kotlin("serialization", version = kotlinVersion))
+    implementation("io.insert-koin:koin-core:$koinVersion")
 }
 
 tasks.test {

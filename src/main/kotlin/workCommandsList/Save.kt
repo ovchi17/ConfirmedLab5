@@ -16,10 +16,10 @@ import java.util.PriorityQueue
  * @author jutsoNNN
  * @since 1.0.0
  */
-class Save: Command {
+class Save: Command() {
      private var pathToFile: String = System.getenv("DataOfCollection")
      private var fileReader: FileReader = FileReader(pathToFile)
-     override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+     override fun execute(str: List<Any>) {
          val consoleWriter: ConsoleWriter = ConsoleWriter()
          val workWithFile: WorkWithFile = WorkWithFile()
          val serializer: Serializer = Serializer()

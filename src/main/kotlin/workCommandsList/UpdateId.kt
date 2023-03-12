@@ -14,8 +14,8 @@ import java.util.*
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class UpdateId: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class UpdateId: Command() {
+    override fun execute(str: List<Any>) {
         val answerToUser: AnswerToUser = AnswerToUser()
         val checkId = str[0]
 
@@ -31,7 +31,7 @@ class UpdateId: Command {
             workWithCollection.getCollection().clear()
             if (collection.peek().id == checkId){
                 val sendList = listOf("add", checkId.toString())
-                tokenizator.tokenizator(add, sendList, workWithCollection)
+                tokenizator.tokenizator(add, sendList)
 
             }else{
                 consoleWriter.printToConsoleLn("noId")
@@ -42,7 +42,7 @@ class UpdateId: Command {
             for (i in 0..collection.size - 1){
                 if (collection.peek().id == checkId){
                     val sendList = listOf("add", checkId.toString())
-                    tokenizator.tokenizator(add, sendList, workWithCollection)
+                    tokenizator.tokenizator(add, sendList)
                     collection.poll()
                 }else{
                     workWithCollection.getCollection().add(collection.peek())

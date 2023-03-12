@@ -13,8 +13,8 @@ import java.util.*
  * @author jutsoNNN
  * @since 1.0.0
  */
-class AvarageOfDistance: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class AvarageOfDistance: Command() {
+    override fun execute(str: List<Any>) {
 
         val consoleWriter: ConsoleWriter = ConsoleWriter()
         val collection = PriorityQueue<Route>(RouteComporator())

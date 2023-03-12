@@ -12,7 +12,7 @@ import usersView.ConsoleWriter
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class ExecuteScript: Command {
+class ExecuteScript: Command() {
 
     var getLink = ""
     var fileLink = File("")
@@ -25,7 +25,7 @@ class ExecuteScript: Command {
     var specialForAdd = ""
 
 
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+    override fun execute(str: List<Any>) {
 
 
         getLink = str[0] as String
@@ -40,7 +40,7 @@ class ExecuteScript: Command {
                         checkerRecursion++
                         val sendList = mutableListOf<Any>()
                         sendList.add(args[1])
-                        execute(sendList, workWithCollection)
+                        execute(sendList)
                     }else if (args[0] == "add" || args[0] == "add_if_max"){
                         addChecker = 10
                         specialForAdd = args[0]
@@ -53,10 +53,10 @@ class ExecuteScript: Command {
                                 addList.add(specialForAdd)
                                 addList.add(params)
                                 params = ""
-                                tokenizator.tokenizatorHelper(specialForAdd, addList, workWithCollection)
+                                tokenizator.tokenizatorHelper(specialForAdd, addList)
                             }
                         }else{
-                            tokenizator.tokenizatorHelper(args[0], args, workWithCollection)
+                            tokenizator.tokenizatorHelper(args[0], args)
                         }
                     }
                 }

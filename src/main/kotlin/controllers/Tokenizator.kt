@@ -55,7 +55,11 @@ class Tokenizator {
             "average_of_distance" to averageOfDistance,
             "filter_less_than_distance" to filterLessThanDistance)
 
-        return COMMANDS[command]
+        if (command in COMMANDS) {
+            return COMMANDS[command]
+        }else{
+            return null
+        }
     }
 
 
@@ -73,7 +77,7 @@ class Tokenizator {
      * @param mass: Array of String arguments.
      * @param workWithCollection: WorkWithCollection contains our main collection
      */
-    fun tokenizator(command: Command, mass: List<String>, workWithCollection: WorkWithCollection){
+    fun tokenizator(command: Command, mass: List<String>){
         val sendList = mutableListOf<Any>()
         if (mass[0] in listOfLong){
             var newToken:Long = 1
@@ -87,7 +91,7 @@ class Tokenizator {
             val newToken = mass[1].toString()
             sendList.add(newToken)
         }
-        command.execute(sendList, workWithCollection)
+        command.execute(sendList)
     }
 
     /**
@@ -97,7 +101,7 @@ class Tokenizator {
      * @param mass: Array of String arguments.
      * @param workWithCollection: WorkWithCollection contains our main collection
      */
-    fun tokenizatorHelper(command: String, mass: List<String>, workWithCollection: WorkWithCollection){
+    fun tokenizatorHelper(command: String, mass: List<String>){
 
         if (command in listString || command in listOfLong || command in listOfNo){
             val commandRight: Command? = mp(command)
@@ -114,7 +118,7 @@ class Tokenizator {
                     val newToken = mass[1].toString()
                     sendList.add(newToken)
                 }
-                commandRight.execute(sendList, workWithCollection)
+                commandRight.execute(sendList)
             }
 
         }else{

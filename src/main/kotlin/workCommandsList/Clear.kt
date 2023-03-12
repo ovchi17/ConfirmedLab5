@@ -9,8 +9,8 @@ import usersView.ConsoleWriter
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class Clear: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class Clear: Command() {
+    override fun execute(str: List<Any>) {
 
         val consoleWriter: ConsoleWriter = ConsoleWriter()
 

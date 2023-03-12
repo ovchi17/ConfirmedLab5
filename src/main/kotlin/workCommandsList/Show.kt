@@ -13,8 +13,8 @@ import usersView.ConsoleWriter
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class Show: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class Show: Command() {
+    override fun execute(str: List<Any>) {
 
         val answerToUser: AnswerToUser = AnswerToUser()
         val consoleWriter: ConsoleWriter = ConsoleWriter()

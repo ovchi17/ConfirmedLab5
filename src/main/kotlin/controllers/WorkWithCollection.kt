@@ -28,6 +28,14 @@ class WorkWithCollection: CollectionMainCommands {
         return priorityQueueCollection
     }
 
+    override fun getId(): Long {
+        return idManager
+    }
+
+    override fun idPlusOne() {
+        idManager++
+    }
+
     /**
      * clearCollection method. Clear collection
      *
@@ -52,7 +60,7 @@ class WorkWithCollection: CollectionMainCommands {
      *
      * @param commandFromUser: String. New command that will be added in history
      */
-    fun historyUpdate(commandFromUser: String){
+    override fun historyUpdate(commandFromUser: String){
         if (commandHistory.size == 14){
             commandHistory.remove(commandHistory[0])
         }
@@ -64,7 +72,7 @@ class WorkWithCollection: CollectionMainCommands {
      *
      * @return commandHistory: MutableList<String>. The list of commands that was executed.
      */
-    fun getHistory(): MutableList<String>{
+    override fun getHistory(): MutableList<String>{
         return commandHistory
     }
 
@@ -73,7 +81,7 @@ class WorkWithCollection: CollectionMainCommands {
      *
      * @return initDate: Date. The date of collection init
      */
-    fun getInitDate():Date {
+    override fun getInitDate():Date {
         return initData
     }
 
@@ -83,7 +91,7 @@ class WorkWithCollection: CollectionMainCommands {
      * @param collection: PriorityQueue<Route>. PriorityQueue Collection that heeded to convert
      * @return priorityQueueCollection.toList(). Returns PriorityQueue Collection in List format
      */
-    fun collectionToList(collection: PriorityQueue<Route>): List<Route> {
+    override fun collectionToList(collection: PriorityQueue<Route>): List<Route> {
         return priorityQueueCollection.toList()
     }
 
@@ -93,7 +101,7 @@ class WorkWithCollection: CollectionMainCommands {
      * @param list: List<Route>. List that heeded to convert
      * @return list.toCollection(PriorityQueue<Route>(RouteComporator())). Returns List in PriorityQueue Collection format
      */
-    fun listToCollection(list: List<Route>): PriorityQueue<Route>{
+    override fun listToCollection(list: List<Route>): PriorityQueue<Route>{
         return list.toCollection(PriorityQueue<Route>(RouteComporator()))
     }
 

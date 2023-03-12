@@ -13,8 +13,8 @@ import java.util.*
  * @author jutsoNNN
  * @since 1.0.0
  */
-class RemoveAllByDistance: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class RemoveAllByDistance: Command() {
+    override fun execute(str: List<Any>) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
         val checkDistance = str[0]

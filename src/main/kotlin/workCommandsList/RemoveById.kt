@@ -13,8 +13,8 @@ import java.util.*
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class RemoveById: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class RemoveById: Command() {
+    override fun execute(str: List<Any>) {
         val answerToUser: AnswerToUser = AnswerToUser()
 
         val checkId = str[0]

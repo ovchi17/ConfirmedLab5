@@ -12,8 +12,8 @@ import java.util.PriorityQueue
  * @author jutsoNNN
  * @since 1.0.0
  */
-class RemoveFirst: Command {
-    override fun execute(str: List<Any>, workWithCollection: WorkWithCollection) {
+class RemoveFirst: Command() {
+    override fun execute(str: List<Any>) {
 
         val consoleWriter: ConsoleWriter = ConsoleWriter()
         val collection = PriorityQueue<Route>(RouteComporator())
