@@ -1,8 +1,5 @@
 package workCommandsList
 
-import controllers.WorkWithCollection
-import usersView.*
-
 /**
  * Class Help. Shows all commands.
  *

@@ -1,9 +1,7 @@
 package workCommandsList
 
-import controllers.WorkWithCollection
 import dataSet.Route
 import dataSet.RouteComporator
-import usersView.ConsoleWriter
 import java.util.PriorityQueue
 
 /**

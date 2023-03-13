@@ -1,11 +1,8 @@
 package workCommandsList
 
 import java.util.*;
-import controllers.WorkWithCollection
 import dataSet.Route
 import dataSet.RouteComporator
-import usersView.AnswerToUser
-import usersView.ConsoleWriter
 
 /**
  * Class Show. Show name and id of objects

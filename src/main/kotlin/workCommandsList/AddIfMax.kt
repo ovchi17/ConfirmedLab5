@@ -1,11 +1,10 @@
 package workCommandsList
 
-import controllers.WorkWithCollection
+import commandsHelpers.AddSet
 import dataSet.Coordinates
 import dataSet.Location
 import dataSet.Route
 import dataSet.RouteComporator
-import usersView.ConsoleWriter
 import java.time.LocalDate
 import java.util.*
 
@@ -19,7 +18,6 @@ class AddIfMax: Command() {
     override fun execute(str: List<Any>) {
 
         val parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
-        val addSet: AddInfoGetter = AddInfoGetter()
 
         if (str.size > 1){
             val getParams = (str[1] as String).split(" ")

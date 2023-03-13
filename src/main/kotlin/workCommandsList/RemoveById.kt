@@ -1,10 +1,7 @@
 package workCommandsList
 
-import controllers.WorkWithCollection
 import dataSet.Route
 import dataSet.RouteComporator
-import usersView.AnswerToUser
-import usersView.ConsoleWriter
 import java.util.*
 
 /**
@@ -15,7 +12,6 @@ import java.util.*
  */
 class RemoveById: Command() {
     override fun execute(str: List<Any>) {
-        val answerToUser: AnswerToUser = AnswerToUser()
 
         val checkId = str[0]
 

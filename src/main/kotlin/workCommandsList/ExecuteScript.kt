@@ -1,10 +1,7 @@
 package workCommandsList
 
 import controllers.CommandException
-import controllers.Tokenizator
-import controllers.WorkWithCollection
 import org.jetbrains.kotlin.konan.file.File
-import usersView.ConsoleWriter
 
 /**
  * Class ExecuteScript. Run commands from file.

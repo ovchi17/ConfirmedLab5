@@ -1,9 +1,5 @@
 package workCommandsList
 
-import controllers.WorkWithCollection
-import usersView.AnswerToUser
-import usersView.ConsoleWriter
-
 /**
  * Class History. Shows the history of commands
  *

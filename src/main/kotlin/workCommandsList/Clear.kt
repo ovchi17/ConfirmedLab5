@@ -1,8 +1,5 @@
 package workCommandsList
 
-import controllers.*
-import usersView.ConsoleWriter
-
 /**
  * Class Clear. Remove all objects from the collection
  *

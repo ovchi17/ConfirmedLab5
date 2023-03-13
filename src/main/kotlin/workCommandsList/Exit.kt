@@ -1,7 +1,5 @@
 package workCommandsList
 
-import controllers.WorkWithCollection
-import usersView.ConsoleWriter
 import kotlin.system.exitProcess
 
 /**

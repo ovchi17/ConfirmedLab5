@@ -1,9 +1,8 @@
 package workCommandsList
 
-import controllers.WorkWithCollection
 import dataSet.*
-import usersView.ConsoleWriter
 import java.time.LocalDate
+import commandsHelpers.*
 
 /**
  * Class Add. Adds a new object to the collection
@@ -14,7 +13,6 @@ import java.time.LocalDate
 class Add: Command() {
     override fun execute(str: List<Any>) {
 
-        val addSet: AddInfoGetter = AddInfoGetter()
         val parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
 
         workWithCollection.idPlusOne()
