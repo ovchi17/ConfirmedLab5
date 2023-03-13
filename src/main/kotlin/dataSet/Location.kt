@@ -18,8 +18,6 @@ class Location {
         z = checkZ
     }
 
-
-
     private var y: Long?
         set(value){
             field = value

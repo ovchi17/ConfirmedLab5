@@ -18,7 +18,6 @@ class ExecuteScript: Command() {
     var fileLink = File("")
     var stopRecursion = 5
     var checkerRecursion = 0
-    var tokenizator = Tokenizator()
     var addChecker = 0
     var params = ""
     var specialForAdd = ""

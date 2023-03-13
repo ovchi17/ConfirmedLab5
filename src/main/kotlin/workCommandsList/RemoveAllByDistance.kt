@@ -15,7 +15,6 @@ import java.util.*
  */
 class RemoveAllByDistance: Command() {
     override fun execute(str: List<Any>) {
-        val answerToUser: AnswerToUser = AnswerToUser()
 
         val checkDistance = str[0]
 

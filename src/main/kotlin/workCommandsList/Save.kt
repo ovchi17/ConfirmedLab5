@@ -26,7 +26,6 @@ class Save: Command() {
          collection.addAll(workWithCollection.getCollection())
          val list = workWithCollection.collectionToList(collection)
          val jsonString = serializer.serialize(list)
-         println(jsonString)
          workWithFile.writeToFile(collection, pathToFile, jsonString)
          consoleWriter.printToConsoleLn("saved")
      }

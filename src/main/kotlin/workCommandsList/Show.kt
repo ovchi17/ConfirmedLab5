@@ -16,8 +16,6 @@ import usersView.ConsoleWriter
 class Show: Command() {
     override fun execute(str: List<Any>) {
 
-        val answerToUser: AnswerToUser = AnswerToUser()
-
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 
@@ -25,19 +23,19 @@ class Show: Command() {
             consoleWriter.printToConsoleLn("emptyCollection")
         }else if(collection.size == 1){
             consoleWriter.printToConsole("showName")
-            answerToUser.writeToConsoleLn(collection.peek().name.toString())
+            //answerToUser.writeToConsoleLn(collection.peek().name.toString())
             consoleWriter.printToConsole("showId")
-            answerToUser.writeToConsoleLn(collection.peek().id.toString())
+            //answerToUser.writeToConsoleLn(collection.peek().id.toString())
         }else{
             for (i in 0..collection.size - 1){
                 consoleWriter.printToConsole("showName")
-                answerToUser.writeToConsoleLn(collection.peek().name.toString())
+                //answerToUser.writeToConsoleLn(collection.peek().name.toString())
                 consoleWriter.printToConsole("showId")
-                answerToUser.writeToConsoleLn(collection.peek().id.toString())
+                //answerToUser.writeToConsoleLn(collection.peek().id.toString())
                 collection.poll()
             }
         }
 
-        answerToUser.writeToConsoleLn("")
+        //answerToUser.writeToConsoleLn("")
     }
 }

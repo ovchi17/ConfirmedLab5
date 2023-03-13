@@ -16,13 +16,12 @@ import java.util.*
  */
 class UpdateId: Command() {
     override fun execute(str: List<Any>) {
-        val answerToUser: AnswerToUser = AnswerToUser()
+
         val checkId = str[0]
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
         val add: Add = Add()
-        val tokenizator: Tokenizator = Tokenizator()
 
         if (collection.size == 0){
             consoleWriter.printToConsoleLn("emptyCollection")

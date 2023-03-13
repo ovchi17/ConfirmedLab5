@@ -12,7 +12,6 @@ import usersView.ConsoleWriter
 class Clear: Command() {
     override fun execute(str: List<Any>) {
 
-
         workWithCollection.clearCollection()
 
         consoleWriter.printToConsole("cleared")

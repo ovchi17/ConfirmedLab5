@@ -19,8 +19,6 @@ class AvarageOfDistance: Command() {
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 
-        val answerToUser: AnswerToUser = AnswerToUser()
-
         val sizeCollection = collection.toList()
 
         if (collection.size == 0){
@@ -32,7 +30,7 @@ class AvarageOfDistance: Command() {
                 distances += sizeCollection.get(i).distance
             }
             result = distances / sizeCollection.count().toDouble()
-            answerToUser.writeToConsoleLn(result.toString())
+            //answerToUser.writeToConsoleLn(result.toString())
         }
     }
 }

@@ -13,16 +13,15 @@ import usersView.ConsoleWriter
 class Info: Command() {
     override fun execute(str: List<Any>) {
 
-        val answerToUser: AnswerToUser = AnswerToUser()
 
         val collection = workWithCollection.getCollection()
 
         consoleWriter.printToConsole("typeCollection")
-        answerToUser.writeToConsoleLn(collection.javaClass.toString())
+        //answerToUser.writeToConsoleLn(collection.javaClass.toString())
         consoleWriter.printToConsole("sizeCollection")
-        answerToUser.writeToConsoleLn(collection.size.toString())
+        //answerToUser.writeToConsoleLn(collection.size.toString())
         consoleWriter.printToConsole("dataCollection")
-        answerToUser.writeToConsoleLn(workWithCollection.getInitDate().toString())
+        //answerToUser.writeToConsoleLn(workWithCollection.getInitDate().toString())
 
     }
 }

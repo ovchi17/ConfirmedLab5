@@ -32,7 +32,7 @@ fun main(){
         distance = 100,
         coordinates = Coordinates(1, 2)
     )
-    println(Json.encodeToString(route))
+    //println(Json.encodeToString(route))
 }
 
 /**

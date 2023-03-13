@@ -13,13 +13,12 @@ import usersView.ConsoleWriter
 class History: Command() {
     override fun execute(str: List<Any>) {
 
-        val answerToUser: AnswerToUser = AnswerToUser()
 
         val collection = workWithCollection.getHistory()
         consoleWriter.printToConsoleLn("historyOfCommands")
         for (i in 0..collection.size - 1){
-            answerToUser.writeToConsole(collection[i] + " ")
+            //answerToUser.writeToConsole(collection[i] + " ")
         }
-        answerToUser.writeToConsoleLn("")
+        //answerToUser.writeToConsoleLn("")
     }
 }

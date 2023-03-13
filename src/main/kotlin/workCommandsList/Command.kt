@@ -1,6 +1,7 @@
 package workCommandsList
 
 import controllers.CollectionMainCommands
+import controllers.Tokenizator
 import controllers.WorkWithCollection
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -23,6 +24,7 @@ abstract class Command: KoinComponent {
 
     val workWithCollection: CollectionMainCommands by inject()
     val consoleWriter: ConsoleWriter by inject()
+    val tokenizator: Tokenizator by inject()
     abstract fun execute(str: List<Any>)
 
 }
