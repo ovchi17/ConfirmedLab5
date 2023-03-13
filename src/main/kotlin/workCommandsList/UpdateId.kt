@@ -1,6 +1,7 @@
 package workCommandsList
 
 
+import commandsHelpers.ResultModule
 import dataSet.Route
 import dataSet.RouteComporator
 import java.util.*
@@ -12,7 +13,7 @@ import java.util.*
  * @since 1.0.0
  */
 class UpdateId: Command() {
-    override fun execute(str: List<Any>) {
+    override fun execute(str: List<Any>): ResultModule {
 
         val checkId = str[0]
 
@@ -21,7 +22,7 @@ class UpdateId: Command() {
         val add: Add = Add()
 
         if (collection.size == 0){
-            consoleWriter.printToConsoleLn("emptyCollection")
+            workWithResultModule.setMessages("emptyCollection")
         }else if(collection.size == 1){
             workWithCollection.getCollection().clear()
             if (collection.peek().id == checkId){
@@ -29,7 +30,7 @@ class UpdateId: Command() {
                 tokenizator.tokenizator(add, sendList)
 
             }else{
-                consoleWriter.printToConsoleLn("noId")
+                workWithResultModule.setMessages("noId")
                 workWithCollection.getCollection().add(collection.peek())
             }
         }else{
@@ -46,6 +47,6 @@ class UpdateId: Command() {
             }
         }
 
-
+        return workWithResultModule.getResultModule()
     }
 }

@@ -1,5 +1,7 @@
 package workCommandsList
 
+import commandsHelpers.ResultModule
+import commandsHelpers.Status
 import controllers.CommandException
 import org.jetbrains.kotlin.konan.file.File
 
@@ -20,7 +22,7 @@ class ExecuteScript: Command() {
     var specialForAdd = ""
 
 
-    override fun execute(str: List<Any>) {
+    override fun execute(str: List<Any>): ResultModule {
 
 
         getLink = str[0] as String
@@ -56,17 +58,22 @@ class ExecuteScript: Command() {
                     }
                 }
             }else{
-                throw CommandException(consoleWriter.printToConsoleLn("recursion").toString())
+                workWithResultModule.setError("recursion")
+                workWithResultModule.setStatus(Status.ERROR)
+                return workWithResultModule.getResultModule()
+                //throw CommandException(null)
+
             }
         }else{
-            consoleWriter.printToConsoleLn("noFile")
+            workWithResultModule.setMessages("noFile")
         }
 
         checkerRecursion -= 1
         if (checkerRecursion == 0) {
-            consoleWriter.printToConsoleLn("success")
+            workWithResultModule.setMessages("success")
         }
 
+        return workWithResultModule.getResultModule()
     }
 }
 

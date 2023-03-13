@@ -28,4 +28,8 @@ class ConsoleWriter {
         answerToUser.writeToConsole(typeMessages.msgToPrint(printKey))
 
     }
+
+    fun returnKeyVlaue(printKey: String): String?{
+        return typeMessages.msgToPrint(printKey)
+    }
 }

@@ -1,5 +1,6 @@
 package workCommandsList
 
+import commandsHelpers.ResultModule
 import dataSet.Route
 import dataSet.RouteComporator
 import java.util.*
@@ -11,7 +12,7 @@ import java.util.*
  * @since 1.0.0
  */
 class AvarageOfDistance: Command() {
-    override fun execute(str: List<Any>) {
+    override fun execute(str: List<Any>): ResultModule {
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
@@ -19,7 +20,7 @@ class AvarageOfDistance: Command() {
         val sizeCollection = collection.toList()
 
         if (collection.size == 0){
-            consoleWriter.printToConsoleLn("emptyCollection")
+            workWithResultModule.setMessages("emptyCollection")
         }else{
             var distances: Long = 0
             val result: Double
@@ -27,7 +28,8 @@ class AvarageOfDistance: Command() {
                 distances += sizeCollection.get(i).distance
             }
             result = distances / sizeCollection.count().toDouble()
-            //answerToUser.writeToConsoleLn(result.toString())
+            workWithResultModule.setMessages(result.toString())
         }
+        return workWithResultModule.getResultModule()
     }
 }

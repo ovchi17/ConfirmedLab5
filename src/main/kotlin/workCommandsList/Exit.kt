@@ -1,5 +1,6 @@
 package workCommandsList
 
+import commandsHelpers.ResultModule
 import kotlin.system.exitProcess
 
 /**
@@ -9,8 +10,8 @@ import kotlin.system.exitProcess
  * @since 1.0.0
  */
 class Exit: Command(){
-    override fun execute(str: List<Any>) {
-        consoleWriter.printToConsoleLn("end")
+    override fun execute(str: List<Any>): ResultModule {
+        workWithResultModule.setMessages("end")
         exitProcess(0)
     }
 }

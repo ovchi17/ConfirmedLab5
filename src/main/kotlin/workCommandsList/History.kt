@@ -1,5 +1,7 @@
 package workCommandsList
 
+import commandsHelpers.ResultModule
+
 /**
  * Class History. Shows the history of commands
  *
@@ -7,14 +9,17 @@ package workCommandsList
  * @since 1.0.0
  */
 class History: Command() {
-    override fun execute(str: List<Any>) {
+    override fun execute(str: List<Any>): ResultModule {
 
 
         val collection = workWithCollection.getHistory()
-        consoleWriter.printToConsoleLn("historyOfCommands")
+        workWithResultModule.setMessages("historyOfCommands")
+        var resultString: String = ""
         for (i in 0..collection.size - 1){
-            //answerToUser.writeToConsole(collection[i] + " ")
+            resultString = resultString + collection[i] + " "
         }
-        //answerToUser.writeToConsoleLn("")
+        workWithResultModule.setMessages(resultString)
+
+        return workWithResultModule.getResultModule()
     }
 }

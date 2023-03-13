@@ -1,5 +1,7 @@
 package workCommandsList
 
+import commandsHelpers.ResultModule
+
 /**
  * Class Help. Shows all commands.
  *
@@ -7,29 +9,29 @@ package workCommandsList
  * @since 1.0.0
  */
 class Help: Command() {
-    override fun execute(str: List<Any>) {
+    override fun execute(str: List<Any>): ResultModule {
 
-        consoleWriter.printToConsoleLn("***")
+        workWithResultModule.setMessages("***")
 
-        consoleWriter.printToConsoleLn("helpHelp")
-        consoleWriter.printToConsoleLn("helpInfo")
-        consoleWriter.printToConsoleLn("helpShow")
-        consoleWriter.printToConsoleLn("helpAdd")
-        consoleWriter.printToConsoleLn("helpUpdate")
-        consoleWriter.printToConsoleLn("helpRemove")
-        consoleWriter.printToConsoleLn("helpClear")
-        consoleWriter.printToConsoleLn("helpSave")
-        consoleWriter.printToConsoleLn("helpExecute")
-        consoleWriter.printToConsoleLn("helpExit")
-        consoleWriter.printToConsoleLn("helpRemoveFirst")
-        consoleWriter.printToConsoleLn("helpAddIfMax")
-        consoleWriter.printToConsoleLn("helpHistory")
-        consoleWriter.printToConsoleLn("helpRemoveAllByDistance")
-        consoleWriter.printToConsoleLn("helpAverageOfDistance")
-        consoleWriter.printToConsoleLn("helpFilterLessThanDistance")
+        workWithResultModule.setMessages("helpHelp")
+        workWithResultModule.setMessages("helpInfo")
+        workWithResultModule.setMessages("helpShow")
+        workWithResultModule.setMessages("helpAdd")
+        workWithResultModule.setMessages("helpUpdate")
+        workWithResultModule.setMessages("helpRemove")
+        workWithResultModule.setMessages("helpClear")
+        workWithResultModule.setMessages("helpSave")
+        workWithResultModule.setMessages("helpExecute")
+        workWithResultModule.setMessages("helpExit")
+        workWithResultModule.setMessages("helpRemoveFirst")
+        workWithResultModule.setMessages("helpAddIfMax")
+        workWithResultModule.setMessages("helpHistory")
+        workWithResultModule.setMessages("helpRemoveAllByDistance")
+        workWithResultModule.setMessages("helpAverageOfDistance")
+        workWithResultModule.setMessages("helpFilterLessThanDistance")
 
-        consoleWriter.printToConsoleLn("***")
+        workWithResultModule.setMessages("***")
 
-
+        return workWithResultModule.getResultModule()
     }
 }

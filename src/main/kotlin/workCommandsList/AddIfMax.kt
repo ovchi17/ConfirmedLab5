@@ -1,6 +1,7 @@
 package workCommandsList
 
 import commandsHelpers.AddSet
+import commandsHelpers.ResultModule
 import dataSet.Coordinates
 import dataSet.Location
 import dataSet.Route
@@ -15,7 +16,7 @@ import java.util.*
  * @since 1.0.0
  */
 class AddIfMax: Command() {
-    override fun execute(str: List<Any>) {
+    override fun execute(str: List<Any>): ResultModule {
 
         val parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
 
@@ -70,13 +71,13 @@ class AddIfMax: Command() {
 
         if (collection.size == 0){
             workWithCollection.addElementToCollection(routeToAdd)
-            consoleWriter.printToConsoleLn("success")
+            workWithResultModule.setMessages("success")
         }else if(collection.size == 1){
             if (distance > collection.peek().distance){
                 workWithCollection.addElementToCollection(routeToAdd)
-                consoleWriter.printToConsoleLn("success")
+                workWithResultModule.setMessages("success")
             }else{
-                consoleWriter.printToConsoleLn("noSuccess")
+                workWithResultModule.setMessages("noSuccess")
             }
         }else{
             var intSr: Int = 0
@@ -87,10 +88,11 @@ class AddIfMax: Command() {
             }
             if (intSr == collection.size){
                 workWithCollection.addElementToCollection(routeToAdd)
-                consoleWriter.printToConsoleLn("success")
+                workWithResultModule.setMessages("success")
             }else{
-                consoleWriter.printToConsoleLn("noSuccess")
+                workWithResultModule.setMessages("noSuccess")
             }
         }
+        return workWithResultModule.getResultModule()
     }
 }

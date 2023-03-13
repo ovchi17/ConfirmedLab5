@@ -1,7 +1,11 @@
 package controllers
 
+import commandsHelpers.ResultModule
+import commandsHelpers.Status
 import workCommandsList.AddIfMax
 import usersView.AnswerToUser
+import usersView.ConsoleWriter
+import usersView.TypeMessages
 import workCommandsList.*
 
 /**
@@ -67,8 +71,9 @@ class Tokenizator {
     val listOfLong = listOf("update", "remove_by_id", "remove_all_by_distance", "filter_less_than_distance", "add")
     val listString = listOf("execute_script")
 
-
-    var writeToConsole: AnswerToUser = AnswerToUser()
+    val typeMessages: TypeMessages = TypeMessages()
+    var writeToConsole: ConsoleWriter = ConsoleWriter()
+    val answerToUser: AnswerToUser = AnswerToUser()
 
     /**
      * tokenizator method. Tokenizate massive to commands with right arguments.
@@ -91,7 +96,19 @@ class Tokenizator {
             val newToken = mass[1].toString()
             sendList.add(newToken)
         }
-        command.execute(sendList)
+        val getResultModule: ResultModule = command.execute(sendList)
+        if (getResultModule.status == Status.SUCCESS) {
+            for (msg in getResultModule.msgToPrint) {
+                if (typeMessages.msgToPrint(msg) != null) {
+                    writeToConsole.printToConsoleLn(msg)
+                } else {
+                    answerToUser.writeToConsoleLn(msg)
+                }
+            }
+            answerToUser.writeToConsoleLn(" ")
+        }else{
+            getResultModule.errorDescription?.let { writeToConsole.printToConsoleLn(it) }
+        }
     }
 
     /**
@@ -118,11 +135,23 @@ class Tokenizator {
                     val newToken = mass[1].toString()
                     sendList.add(newToken)
                 }
-                commandRight.execute(sendList)
+                val getResultModule: ResultModule = commandRight.execute(sendList)
+                if (getResultModule.status == Status.SUCCESS) {
+                    for (msg in getResultModule.msgToPrint) {
+                        if (typeMessages.msgToPrint(msg) != null) {
+                            writeToConsole.printToConsoleLn(msg)
+                        } else {
+                            answerToUser.writeToConsoleLn(msg)
+                        }
+                    }
+                    answerToUser.writeToConsoleLn(" ")
+                }else{
+                    getResultModule.errorDescription?.let { writeToConsole.printToConsoleLn(it) }
+                }
             }
 
         }else{
-            writeToConsole.writeToConsoleLn("Ошибка в исполняемом скрипте")
+            answerToUser.writeToConsoleLn("Ошибка в исполняемом скрипте")
         }
     }
 

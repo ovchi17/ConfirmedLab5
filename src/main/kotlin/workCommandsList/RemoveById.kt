@@ -1,5 +1,6 @@
 package workCommandsList
 
+import commandsHelpers.ResultModule
 import dataSet.Route
 import dataSet.RouteComporator
 import java.util.*
@@ -11,7 +12,7 @@ import java.util.*
  * @since 1.0.0
  */
 class RemoveById: Command() {
-    override fun execute(str: List<Any>) {
+    override fun execute(str: List<Any>): ResultModule {
 
         val checkId = str[0]
 
@@ -19,25 +20,26 @@ class RemoveById: Command() {
         collection.addAll(workWithCollection.getCollection())
 
         if (collection.size == 0){
-            consoleWriter.printToConsoleLn("emptyCollection")
+            workWithResultModule.setMessages("emptyCollection")
         }else if(collection.size == 1){
             if (collection.peek().id == checkId){
                 workWithCollection.getCollection().clear()
-                consoleWriter.printToConsoleLn("cleared")
+                workWithResultModule.setMessages("cleared")
             }else{
-                consoleWriter.printToConsoleLn("noId")
+                workWithResultModule.setMessages("noId")
             }
         }else{
             workWithCollection.getCollection().clear()
             for (i in 0..collection.size - 1){
                 if (collection.peek().id == checkId){
                     collection.poll()
-                    consoleWriter.printToConsoleLn("cleared")
+                    workWithResultModule.setMessages("cleared")
                 }else{
                     workWithCollection.getCollection().add(collection.peek())
                     collection.poll()
                 }
             }
         }
+        return workWithResultModule.getResultModule()
     }
 }

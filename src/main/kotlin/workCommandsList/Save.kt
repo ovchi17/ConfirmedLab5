@@ -1,5 +1,6 @@
 package workCommandsList
 
+import commandsHelpers.ResultModule
 import controllers.Serializer
 import controllers.WorkWithFile
 import dataSet.Route
@@ -16,12 +17,14 @@ import java.util.PriorityQueue
 class Save: Command() {
      private var pathToFile: String = System.getenv("DataOfCollection")
      private var fileReader: FileReader = FileReader(pathToFile)
-     override fun execute(str: List<Any>) {
+     override fun execute(str: List<Any>): ResultModule {
          val collection = PriorityQueue<Route>(RouteComporator())
          collection.addAll(workWithCollection.getCollection())
          val list = workWithCollection.collectionToList(collection)
          val jsonString = serializer.serialize(list)
          workWithFile.writeToFile(collection, pathToFile, jsonString)
-         consoleWriter.printToConsoleLn("saved")
+         workWithResultModule.setMessages("saved")
+
+         return workWithResultModule.getResultModule()
      }
 }

@@ -1,5 +1,6 @@
 package workCommandsList
 
+import commandsHelpers.ResultModule
 import java.util.*;
 import dataSet.Route
 import dataSet.RouteComporator
@@ -11,28 +12,24 @@ import dataSet.RouteComporator
  * @since 1.0.0
  */
 class Show: Command() {
-    override fun execute(str: List<Any>) {
+    override fun execute(str: List<Any>): ResultModule {
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
 
         if (collection.size == 0){
-            consoleWriter.printToConsoleLn("emptyCollection")
+            workWithResultModule.setMessages("emptyCollection")
         }else if(collection.size == 1){
-            consoleWriter.printToConsole("showName")
-            //answerToUser.writeToConsoleLn(collection.peek().name.toString())
-            consoleWriter.printToConsole("showId")
-            //answerToUser.writeToConsoleLn(collection.peek().id.toString())
+            workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("showName").toString() + collection.peek().name.toString())
+            workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("showId").toString() + collection.peek().id.toString())
         }else{
             for (i in 0..collection.size - 1){
-                consoleWriter.printToConsole("showName")
-                //answerToUser.writeToConsoleLn(collection.peek().name.toString())
-                consoleWriter.printToConsole("showId")
-                //answerToUser.writeToConsoleLn(collection.peek().id.toString())
+                workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("showName").toString() + collection.peek().name.toString())
+                workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("showId").toString() + collection.peek().id.toString())
                 collection.poll()
             }
         }
 
-        //answerToUser.writeToConsoleLn("")
+        return workWithResultModule.getResultModule()
     }
 }

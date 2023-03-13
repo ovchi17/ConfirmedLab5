@@ -1,5 +1,7 @@
 package workCommandsList
 
+import commandsHelpers.ResultModule
+
 /**
  * Class Info. Shows information about a commands
  *
@@ -7,17 +9,15 @@ package workCommandsList
  * @since 1.0.0
  */
 class Info: Command() {
-    override fun execute(str: List<Any>) {
+    override fun execute(str: List<Any>): ResultModule {
 
 
         val collection = workWithCollection.getCollection()
 
-        consoleWriter.printToConsole("typeCollection")
-        //answerToUser.writeToConsoleLn(collection.javaClass.toString())
-        consoleWriter.printToConsole("sizeCollection")
-        //answerToUser.writeToConsoleLn(collection.size.toString())
-        consoleWriter.printToConsole("dataCollection")
-        //answerToUser.writeToConsoleLn(workWithCollection.getInitDate().toString())
+        workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("typeCollection").toString() + collection.javaClass.toString())
+        workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("sizeCollection").toString() + collection.size.toString())
+        workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("dataCollection").toString() + workWithCollection.getInitDate().toString())
 
+        return workWithResultModule.getResultModule()
     }
 }

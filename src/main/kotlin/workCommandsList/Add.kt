@@ -11,9 +11,20 @@ import commandsHelpers.*
  * @since 1.0.0
  */
 class Add: Command() {
-    override fun execute(str: List<Any>) {
+    override fun execute(str: List<Any>): ResultModule {
 
-        val parametrs: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
+        val parametrs: MutableList<String?> = mutableListOf(
+            "noInfo",
+            "noInfo",
+            "noInfo",
+            "noInfo",
+            "noInfo",
+            "noInfo",
+            "noInfo",
+            "noInfo",
+            "noInfo",
+            "noInfo"
+        )
 
         workWithCollection.idPlusOne()
         var id: Long = workWithCollection.getId()
@@ -25,11 +36,11 @@ class Add: Command() {
         val distance: Long
         val stopper: Long = 1
 
-        if (str[0] != stopper){
+        if (str[0] != stopper) {
             id = str[0] as Long
         }
 
-        if (str.size > 1){
+        if (str.size > 1) {
             val getParams = (str[1] as String).split(" ")
             parametrs[0] = getParams[0]
             parametrs[1] = getParams[1]
@@ -58,16 +69,19 @@ class Add: Command() {
         to = Location(location1, location2, location3)
         from = Location(location1_2, location2_2, location3_2)
 
-        val routeToAdd: Route = Route(id,
+        val routeToAdd: Route = Route(
+            id,
             name = name,
             coordinates = coordinates,
             creationDate = creationDate,
             from = from,
             to = to,
-            distance = distance)
+            distance = distance
+        )
 
         workWithCollection.addElementToCollection(routeToAdd)
+        workWithResultModule.setMessages("success")
 
-        consoleWriter.printToConsoleLn("success")
+        return workWithResultModule.getResultModule()
     }
 }

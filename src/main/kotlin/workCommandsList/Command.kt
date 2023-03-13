@@ -1,6 +1,8 @@
 package workCommandsList
 
 import commandsHelpers.AddSet
+import commandsHelpers.ResultModule
+import commandsHelpers.WorkWithResultModule
 import controllers.*
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -26,6 +28,7 @@ abstract class Command: KoinComponent {
     val addSet: AddSet by inject()
     val workWithFile: WorkWithFile by inject()
     val serializer: Serializer by inject()
-    abstract fun execute(str: List<Any>)
+    val workWithResultModule: WorkWithResultModule by inject()
+    abstract fun execute(str: List<Any>): ResultModule
 
 }
