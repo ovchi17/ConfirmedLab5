@@ -22,9 +22,9 @@ class ExecuteScript: Command() {
     var specialForAdd = ""
 
 
-    override fun execute(str: List<Any>): ResultModule {
+    override fun execute(): ResultModule {
 
-
+        var str = parametrs.getParametrs()
         getLink = str[0] as String
 
         if (File(getLink).exists){
@@ -37,7 +37,8 @@ class ExecuteScript: Command() {
                         checkerRecursion++
                         val sendList = mutableListOf<Any>()
                         sendList.add(args[1])
-                        execute(sendList)
+                        parametrs.setParametrs(sendList)
+                        execute()
                     }else if (args[0] == "add" || args[0] == "add_if_max"){
                         addChecker = 10
                         specialForAdd = args[0]

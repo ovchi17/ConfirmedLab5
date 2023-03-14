@@ -13,8 +13,9 @@ import java.util.*
  * @since 1.0.0
  */
 class UpdateId: Command() {
-    override fun execute(str: List<Any>): ResultModule {
+    override fun execute(): ResultModule {
 
+        var str = parametrs.getParametrs()
         val checkId = str[0]
 
         val collection = PriorityQueue<Route>(RouteComporator())

@@ -12,7 +12,7 @@ import dataSet.RouteComporator
  * @since 1.0.0
  */
 class Show: Command() {
-    override fun execute(str: List<Any>): ResultModule {
+    override fun execute(): ResultModule {
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())

@@ -9,7 +9,7 @@ import commandsHelpers.ResultModule
  * @since 1.0.0
  */
 class Clear: Command() {
-    override fun execute(str: List<Any>): ResultModule {
+    override fun execute(): ResultModule {
 
         workWithCollection.clearCollection()
 

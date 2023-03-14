@@ -29,6 +29,7 @@ abstract class Command: KoinComponent {
     val workWithFile: WorkWithFile by inject()
     val serializer: Serializer by inject()
     val workWithResultModule: WorkWithResultModule by inject()
-    abstract fun execute(str: List<Any>): ResultModule
+    val parametrs: Parametrs by inject()
+    abstract fun execute(): ResultModule
 
 }

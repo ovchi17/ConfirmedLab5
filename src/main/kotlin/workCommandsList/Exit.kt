@@ -10,7 +10,7 @@ import kotlin.system.exitProcess
  * @since 1.0.0
  */
 class Exit: Command(){
-    override fun execute(str: List<Any>): ResultModule {
+    override fun execute(): ResultModule {
         workWithResultModule.setMessages("end")
         exitProcess(0)
     }

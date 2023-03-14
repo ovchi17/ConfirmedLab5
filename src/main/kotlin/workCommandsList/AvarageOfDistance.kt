@@ -12,7 +12,7 @@ import java.util.*
  * @since 1.0.0
  */
 class AvarageOfDistance: Command() {
-    override fun execute(str: List<Any>): ResultModule {
+    override fun execute(): ResultModule {
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())

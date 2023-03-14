@@ -11,7 +11,9 @@ import commandsHelpers.*
  * @since 1.0.0
  */
 class Add: Command() {
-    override fun execute(str: List<Any>): ResultModule {
+    override fun execute(): ResultModule {
+
+        var str = parametrs.getParametrs()
 
         val parametrs: MutableList<String?> = mutableListOf(
             "noInfo",

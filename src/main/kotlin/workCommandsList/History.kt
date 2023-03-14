@@ -9,7 +9,7 @@ import commandsHelpers.ResultModule
  * @since 1.0.0
  */
 class History: Command() {
-    override fun execute(str: List<Any>): ResultModule {
+    override fun execute(): ResultModule {
 
 
         val collection = workWithCollection.getHistory()

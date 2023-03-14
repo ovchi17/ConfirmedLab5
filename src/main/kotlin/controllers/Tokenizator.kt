@@ -1,7 +1,10 @@
 package controllers
 
+import commandsHelpers.AddSet
 import commandsHelpers.ResultModule
 import commandsHelpers.Status
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 import workCommandsList.AddIfMax
 import usersView.AnswerToUser
 import usersView.ConsoleWriter
@@ -15,7 +18,7 @@ import workCommandsList.*
  * @author OvchinnikovI17
  * @since 1.0.0
  */
-class Tokenizator {
+class Tokenizator: KoinComponent {
 
     /**
      * mp method. Keys for command
@@ -74,6 +77,7 @@ class Tokenizator {
     val typeMessages: TypeMessages = TypeMessages()
     var writeToConsole: ConsoleWriter = ConsoleWriter()
     val answerToUser: AnswerToUser = AnswerToUser()
+    val parametrs: Parametrs by inject()
 
     /**
      * tokenizator method. Tokenizate massive to commands with right arguments.
@@ -89,14 +93,15 @@ class Tokenizator {
             try {
                 newToken = mass[1].toLong()
             }catch (e: NumberFormatException){
-                throw CommandException("Ошибочный параметр для команды")
+                answerToUser.writeToConsoleLn("Ошибка в парматрах, установлено значение по умолчанию")
             }
             sendList.add(newToken)
         }else if(mass[0] in listString){
             val newToken = mass[1].toString()
             sendList.add(newToken)
         }
-        val getResultModule: ResultModule = command.execute(sendList)
+        parametrs.setParametrs(sendList)
+        val getResultModule: ResultModule = command.execute()
         if (getResultModule.status == Status.SUCCESS) {
             for (msg in getResultModule.msgToPrint) {
                 if (typeMessages.msgToPrint(msg) != null) {
@@ -135,7 +140,8 @@ class Tokenizator {
                     val newToken = mass[1].toString()
                     sendList.add(newToken)
                 }
-                val getResultModule: ResultModule = commandRight.execute(sendList)
+                parametrs.setParametrs(sendList)
+                val getResultModule: ResultModule = commandRight.execute()
                 if (getResultModule.status == Status.SUCCESS) {
                     for (msg in getResultModule.msgToPrint) {
                         if (typeMessages.msgToPrint(msg) != null) {

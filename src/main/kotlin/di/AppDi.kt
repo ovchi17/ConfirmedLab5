@@ -38,4 +38,8 @@ val koinModule = module {
         WorkWithResultModule()
     }
 
+    single {
+        Parametrs()
+    }
+
 }
