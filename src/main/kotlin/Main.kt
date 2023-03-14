@@ -1,14 +1,14 @@
 import controllers.*
 import dataSet.Route
-import workCommandsList.*
 import usersView.*
 import java.io.File
 import java.io.FileReader
 import java.util.*
 import di.koinModule
+import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.context.startKoin
-import org.koin.core.component.KoinComponent
+
 
 fun main() {
 
@@ -17,7 +17,7 @@ fun main() {
     }
 
     val writeToConsole: AnswerToUser = AnswerToUser()
-    val workWithCollection: WorkWithCollection = WorkWithCollection()
+    val workWithCollection = WorkWithCollectionHelper().returnWorkWithCollection()
     val tokenizator: Tokenizator = Tokenizator()
 
 
@@ -27,7 +27,6 @@ fun main() {
 
     val workWithFile: WorkWithFile = WorkWithFile()
     val pathToFile: String = System.getenv("DataOfCollection")
-    var fileReader: FileReader = FileReader(pathToFile)
     val serializer: Serializer = Serializer()
     if (!workWithFile.checkFile(pathToFile)){
         val list = serializer.deserialize(workWithFile.readFile(File(pathToFile)))
@@ -39,7 +38,11 @@ fun main() {
             }
             workWithCollection.addElementToCollection(collection.toList().get(i))
         }
-        workWithCollection.idManager = maxId.toLong()
+        if (workWithCollection.getId() < maxId.toLong()){
+            while(workWithCollection.getId() < maxId.toLong()){
+                workWithCollection.idPlusOne()
+            }
+        }
     }
 
     while (true){
@@ -52,5 +55,13 @@ fun main() {
         }else{
             writeToConsole.writeToConsoleLn("Введена неверная команда. Используйте help для просмотра команд")
         }
+    }
+}
+
+class WorkWithCollectionHelper: KoinComponent{
+    val workWithCollection: CollectionMainCommands by inject()
+
+    fun returnWorkWithCollection(): CollectionMainCommands{
+        return workWithCollection
     }
 }

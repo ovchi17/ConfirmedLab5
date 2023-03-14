@@ -21,9 +21,7 @@ class WorkWithFile {
      * @return isEmpty: Boolean.
      */
     fun checkFile(pathToFile: String): Boolean{
-        val collection = PriorityQueue<Route>(RouteComporator())
         val pathToFile: String = System.getenv("DataOfCollection")
-        var fileReader: FileReader = FileReader(pathToFile)
         val file = File(pathToFile)
         var isEmpty = true
         if (file.length() != 0L){

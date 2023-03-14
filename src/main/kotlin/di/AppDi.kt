@@ -3,7 +3,6 @@ package di
 import commandsHelpers.AddSet
 import commandsHelpers.WorkWithResultModule
 import controllers.*
-import org.koin.core.component.inject
 import org.koin.dsl.module
 import usersView.ConsoleWriter
 

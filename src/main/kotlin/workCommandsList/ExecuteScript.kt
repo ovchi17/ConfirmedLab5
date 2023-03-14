@@ -2,7 +2,6 @@ package workCommandsList
 
 import commandsHelpers.ResultModule
 import commandsHelpers.Status
-import controllers.CommandException
 import org.jetbrains.kotlin.konan.file.File
 
 /**
@@ -24,7 +23,7 @@ class ExecuteScript: Command() {
 
     override fun execute(): ResultModule {
 
-        var str = parametrs.getParametrs()
+        val str = parametrs.getParametrs()
         getLink = str[0] as String
 
         if (File(getLink).exists){
@@ -62,8 +61,6 @@ class ExecuteScript: Command() {
                 workWithResultModule.setError("recursion")
                 workWithResultModule.setStatus(Status.ERROR)
                 return workWithResultModule.getResultModule()
-                //throw CommandException(null)
-
             }
         }else{
             workWithResultModule.setMessages("noFile")

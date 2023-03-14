@@ -16,7 +16,7 @@ class FilterLessThanDistance: Command() {
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
-        var str = parametrs.getParametrs()
+        val str = parametrs.getParametrs()
 
         val checkDistance = str[0]
 

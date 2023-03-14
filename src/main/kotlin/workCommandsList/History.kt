@@ -14,7 +14,7 @@ class History: Command() {
 
         val collection = workWithCollection.getHistory()
         workWithResultModule.setMessages("historyOfCommands")
-        var resultString: String = ""
+        var resultString = ""
         for (i in 0..collection.size - 1){
             resultString = resultString + collection[i] + " "
         }

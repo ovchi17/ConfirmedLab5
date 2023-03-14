@@ -13,7 +13,7 @@ import commandsHelpers.*
 class Add: Command() {
     override fun execute(): ResultModule {
 
-        var str = parametrs.getParametrs()
+        val str = parametrs.getParametrs()
 
         val parametrs: MutableList<String?> = mutableListOf(
             "noInfo",

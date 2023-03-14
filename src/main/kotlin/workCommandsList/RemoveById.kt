@@ -14,7 +14,7 @@ import java.util.*
 class RemoveById: Command() {
     override fun execute(): ResultModule {
 
-        var str = parametrs.getParametrs()
+        val str = parametrs.getParametrs()
         val checkId = str[0]
 
         val collection = PriorityQueue<Route>(RouteComporator())

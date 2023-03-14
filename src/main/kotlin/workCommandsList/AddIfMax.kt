@@ -1,6 +1,5 @@
 package workCommandsList
 
-import commandsHelpers.AddSet
 import commandsHelpers.ResultModule
 import dataSet.Coordinates
 import dataSet.Location
@@ -19,7 +18,7 @@ class AddIfMax: Command() {
     override fun execute(): ResultModule {
 
         val parametrsList: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")
-        var str = parametrs.getParametrs()
+        val str = parametrs.getParametrs()
 
         if (str.size > 1){
             val getParams = (str[1] as String).split(" ")
