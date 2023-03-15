@@ -9,6 +9,12 @@ import commandsHelpers.ResultModule
  * @since 1.0.0
  */
 class Help: Command() {
+
+    /**
+     * execute method. Returns add commands with info
+     *
+     * @return info from command as ResultModule
+     */
     override fun execute(): ResultModule {
 
         workWithResultModule.setMessages("***")

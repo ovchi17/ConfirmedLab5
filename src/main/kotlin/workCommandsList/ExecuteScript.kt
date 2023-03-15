@@ -20,7 +20,11 @@ class ExecuteScript: Command() {
     var params = ""
     var specialForAdd = ""
 
-
+    /**
+     * execute method. Starts script
+     *
+     * @return info from command as ResultModule
+     */
     override fun execute(): ResultModule {
 
         val str = parametrs.getParametrs()

@@ -12,6 +12,12 @@ import java.util.PriorityQueue
  * @since 1.0.0
  */
 class RemoveFirst: Command(){
+
+    /**
+     * execute method. Remove first object in collection
+     *
+     * @return info from command as ResultModule
+     */
     override fun execute(): ResultModule {
 
         val collection = PriorityQueue<Route>(RouteComporator())

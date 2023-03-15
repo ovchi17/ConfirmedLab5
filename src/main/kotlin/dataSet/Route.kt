@@ -8,6 +8,13 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
+/**
+ * Data Class Route. CollectionModules
+ *
+ * @constructor id: Long, name: String, coordinates: Coordinates, creationDate: LocalDate, from: Location, to: Location, distance: Long
+ * @author OvchinnikovI17
+ * @since 1.0.0
+ */
 @Serializable
 data class Route(
     var id:Long = (1..10000).random().toLong(),
@@ -34,11 +41,3 @@ fun main(){
     )
     //println(Json.encodeToString(route))
 }
-
-/**
- * Route. <code>Route</code> - main model.
- *
- * @constructor id: Long, name: String, coordinates: Coordinates, creationDate: LocalDate, from: Location, to: Location, distance: Long
- * @author OvchinnikovI17
- * @since 1.0.0
- */

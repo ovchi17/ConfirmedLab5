@@ -9,14 +9,19 @@ import commandsHelpers.ResultModule
  * @since 1.0.0
  */
 class Info: Command() {
-    override fun execute(): ResultModule {
 
+    /**
+     * execute method. Returns info about collection
+     *
+     * @return info from command as ResultModule
+     */
+    override fun execute(): ResultModule {
 
         val collection = workWithCollection.getCollection()
 
-        workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("typeCollection").toString() + collection.javaClass.toString())
-        workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("sizeCollection").toString() + collection.size.toString())
-        workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("dataCollection").toString() + workWithCollection.getInitDate().toString())
+        workWithResultModule.setMessages(consoleWriter.returnKeyValue("typeCollection").toString() + collection.javaClass.toString())
+        workWithResultModule.setMessages(consoleWriter.returnKeyValue("sizeCollection").toString() + collection.size.toString())
+        workWithResultModule.setMessages(consoleWriter.returnKeyValue("dataCollection").toString() + workWithCollection.getInitDate().toString())
 
         return workWithResultModule.getResultModule()
     }

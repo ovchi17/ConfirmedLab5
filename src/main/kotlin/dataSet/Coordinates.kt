@@ -16,8 +16,6 @@ class Coordinates {
         y = checkY
     }
 
-
-
     private var x: Long?
         set(value){
             field = value

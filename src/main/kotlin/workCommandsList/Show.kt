@@ -12,6 +12,12 @@ import dataSet.RouteComporator
  * @since 1.0.0
  */
 class Show: Command() {
+
+    /**
+     * execute method. Show objects from collection
+     *
+     * @return info from command as ResultModule
+     */
     override fun execute(): ResultModule {
 
         val collection = PriorityQueue<Route>(RouteComporator())
@@ -20,12 +26,12 @@ class Show: Command() {
         if (collection.size == 0){
             workWithResultModule.setMessages("emptyCollection")
         }else if(collection.size == 1){
-            workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("showName").toString() + collection.peek().name.toString())
-            workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("showId").toString() + collection.peek().id.toString())
+            workWithResultModule.setMessages(consoleWriter.returnKeyValue("showName").toString() + collection.peek().name.toString())
+            workWithResultModule.setMessages(consoleWriter.returnKeyValue("showId").toString() + collection.peek().id.toString())
         }else{
             for (i in 0..collection.size - 1){
-                workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("showName").toString() + collection.peek().name.toString())
-                workWithResultModule.setMessages(consoleWriter.returnKeyVlaue("showId").toString() + collection.peek().id.toString())
+                workWithResultModule.setMessages(consoleWriter.returnKeyValue("showName").toString() + collection.peek().name.toString())
+                workWithResultModule.setMessages(consoleWriter.returnKeyValue("showId").toString() + collection.peek().id.toString())
                 collection.poll()
             }
         }

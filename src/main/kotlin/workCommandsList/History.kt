@@ -9,8 +9,13 @@ import commandsHelpers.ResultModule
  * @since 1.0.0
  */
 class History: Command() {
-    override fun execute(): ResultModule {
 
+    /**
+     * execute method. Returns history
+     *
+     * @return info from command as ResultModule
+     */
+    override fun execute(): ResultModule {
 
         val collection = workWithCollection.getHistory()
         workWithResultModule.setMessages("historyOfCommands")

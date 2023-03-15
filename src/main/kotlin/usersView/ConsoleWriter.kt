@@ -29,7 +29,13 @@ class ConsoleWriter {
 
     }
 
-    fun returnKeyVlaue(printKey: String): String?{
+    /**
+     * returnKeyValue method
+     *
+     * @param printKey
+     * @return message as String
+     */
+    fun returnKeyValue(printKey: String): String?{
         return typeMessages.msgToPrint(printKey)
     }
 }

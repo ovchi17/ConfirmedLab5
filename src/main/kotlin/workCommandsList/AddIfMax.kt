@@ -15,6 +15,12 @@ import java.util.*
  * @since 1.0.0
  */
 class AddIfMax: Command() {
+
+    /**
+     * execute method. Add object if distance is max
+     *
+     * @return info from command as ResultModule
+     */
     override fun execute(): ResultModule {
 
         val parametrsList: MutableList<String?> = mutableListOf("noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo", "noInfo")

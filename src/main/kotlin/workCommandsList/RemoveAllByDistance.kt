@@ -12,6 +12,12 @@ import java.util.*
  * @since 1.0.0
  */
 class RemoveAllByDistance: Command() {
+
+    /**
+     * execute method. Remove all objects with distance in parametrs
+     *
+     * @return info from command as ResultModule
+     */
     override fun execute(): ResultModule {
 
         val str = parametrs.getParametrs()

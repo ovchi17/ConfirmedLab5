@@ -15,7 +15,13 @@ import java.util.PriorityQueue
 class Save: Command() {
      private var pathToFile: String = System.getenv("DataOfCollection")
      private var fileReader: FileReader = FileReader(pathToFile)
-     override fun execute(): ResultModule {
+
+    /**
+     * execute method. Save collection to file
+     *
+     * @return info from command as ResultModule
+     */
+    override fun execute(): ResultModule {
          val collection = PriorityQueue<Route>(RouteComporator())
          collection.addAll(workWithCollection.getCollection())
          val list = workWithCollection.collectionToList(collection)

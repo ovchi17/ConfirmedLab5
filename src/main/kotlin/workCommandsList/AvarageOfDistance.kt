@@ -12,6 +12,12 @@ import java.util.*
  * @since 1.0.0
  */
 class AvarageOfDistance: Command() {
+
+    /**
+     * execute method. Returns average distance
+     *
+     * @return info from command as ResultModule
+     */
     override fun execute(): ResultModule {
 
         val collection = PriorityQueue<Route>(RouteComporator())

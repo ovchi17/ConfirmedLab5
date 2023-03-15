@@ -161,6 +161,12 @@ class Tokenizator: KoinComponent {
         }
     }
 
+    /**
+     * getCommand method. Returns command from string key
+     *
+     * @param command
+     * @return message as Command
+     */
     fun getCommand(command: String): Command? {
         val commandGet: Command? = mp(command)
         return commandGet

@@ -13,6 +13,12 @@ import java.util.*
  * @since 1.0.0
  */
 class UpdateId: Command() {
+
+    /**
+     * execute method. Update object with given id
+     *
+     * @return info from command as ResultModule
+     */
     override fun execute(): ResultModule {
 
         val str = parametrs.getParametrs()

@@ -5,7 +5,7 @@ import usersView.ConsoleWriter
 import usersView.ReadFromUser
 
 /**
- * Class AddInfoGetter. In fact, Add and AddIfMax setter
+ * Class AddInfoSetter. In fact, Add and AddIfMax setter
  *
  * @author OvchinnikovI17
  * @since 1.0.0
@@ -16,7 +16,12 @@ class AddSet {
     val answerToUser: AnswerToUser = AnswerToUser()
     val readFromUser: ReadFromUser = ReadFromUser()
 
-
+    /**
+     * name method. Set name
+     *
+     * @param parametr
+     * @return message as String
+     */
     fun name(parametr: String?): String{
         var name: String? = " "
         var resultReturn = " "
@@ -43,6 +48,12 @@ class AddSet {
         return resultReturn
     }
 
+    /**
+     * coord1 method. Set coord1
+     *
+     * @param parametr
+     * @return message as Long
+     */
     fun coord1(parametr: String?): Long?{
         var coord1: String? = "0"
         var resultReturn: Long? = null
@@ -65,6 +76,12 @@ class AddSet {
         return resultReturn
     }
 
+    /**
+     * coord2 method. Set coord2
+     *
+     * @param parametr
+     * @return message as Long
+     */
     fun coord2(parametr: String?): Long{
         var coord2: String? = "0"
         var resultReturn: Long = 0;
@@ -98,6 +115,12 @@ class AddSet {
         return resultReturn
     }
 
+    /**
+     * location1 method. Set location1
+     *
+     * @param parametr
+     * @return message as Long
+     */
     fun location1(parametr: String?): Long?{
         var location1: String? = "0"
         var resultReturn: Long? = null
@@ -120,6 +143,12 @@ class AddSet {
         return resultReturn
     }
 
+    /**
+     * location2 method. Set location2
+     *
+     * @param parametr
+     * @return message as Long
+     */
     fun location2(parametr: String?): Long{
         var location2: String? = "0"
         var resultReturn: Long = 0;
@@ -148,6 +177,12 @@ class AddSet {
         return resultReturn
     }
 
+    /**
+     * location3 method. Set location3
+     *
+     * @param parametr
+     * @return message as Int
+     */
     fun location3(parametr: String?): Int{
         var location3: String? = "0"
         var resultReturn: Int = 0;
@@ -176,6 +211,12 @@ class AddSet {
         return resultReturn
     }
 
+    /**
+     * location12 method. Set location12
+     *
+     * @param parametr
+     * @return message as Long
+     */
     fun location12(parametr: String?): Long?{
         var location12: String? = "0"
         var resultReturn: Long? = null
@@ -198,6 +239,12 @@ class AddSet {
         return resultReturn
     }
 
+    /**
+     * location22 method. Set location22
+     *
+     * @param parametr
+     * @return message as Long
+     */
     fun location22(parametr: String?): Long{
         var location22: String? = "0"
         var resultReturn: Long = 0;
@@ -226,6 +273,12 @@ class AddSet {
         return resultReturn
     }
 
+    /**
+     * location32 method. Set location32
+     *
+     * @param parametr
+     * @return message as Int
+     */
     fun location32(parametr: String?): Int{
         var location32: String? = "0"
         var resultReturn: Int = 0;
@@ -254,6 +307,12 @@ class AddSet {
         return resultReturn
     }
 
+    /**
+     * distance method. Set distance
+     *
+     * @param parametr
+     * @return message as Long
+     */
     fun distance(parametr: String?): Long{
         var distance: String? = "2"
         var resultReturn: Long = 2;

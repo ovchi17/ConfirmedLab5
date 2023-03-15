@@ -28,10 +28,19 @@ class WorkWithCollection: CollectionMainCommands {
         return priorityQueueCollection
     }
 
+    /**
+     * getId method. Returns id
+     *
+     * @return message as Long
+     */
     override fun getId(): Long {
         return idManager
     }
 
+    /**
+     * idPlusOne method. id increases by one
+     *
+     */
     override fun idPlusOne() {
         idManager++
     }

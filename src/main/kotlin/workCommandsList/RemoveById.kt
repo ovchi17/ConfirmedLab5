@@ -12,6 +12,12 @@ import java.util.*
  * @since 1.0.0
  */
 class RemoveById: Command() {
+
+    /**
+     * execute method. Remove object by given id
+     *
+     * @return info from command as ResultModule
+     */
     override fun execute(): ResultModule {
 
         val str = parametrs.getParametrs()

@@ -1,7 +1,7 @@
 package usersView
 
 /**
- * TypeMessages class. Contains kays and TypeMessages
+ * TypeMessages class. Contains keys and TypeMessages
  *
  * @author OvchinnikovI17
  * @since 1.0.0
@@ -55,7 +55,7 @@ class TypeMessages {
     )
 
     /**
-     * readUsersMessage method. Read users messages
+     * msgToPrint method. Returns message
      *
      * @param printingKey String that represents the printing key
      * @return message as String

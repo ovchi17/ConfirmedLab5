@@ -11,6 +11,12 @@ import commandsHelpers.*
  * @since 1.0.0
  */
 class Add: Command() {
+
+    /**
+     * execute method. Add object to collection
+     *
+     * @return info from command as ResultModule
+     */
     override fun execute(): ResultModule {
 
         val str = parametrs.getParametrs()

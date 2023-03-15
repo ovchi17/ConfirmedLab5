@@ -29,6 +29,4 @@ class Location {
         set(value){
             field = value
         }
-
 }
-
