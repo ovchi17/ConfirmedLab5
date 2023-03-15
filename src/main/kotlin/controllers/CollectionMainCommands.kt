@@ -66,6 +66,13 @@ interface CollectionMainCommands {
     fun getInitDate(): Date
 
     /**
+     * addAllElementToCollection method. Add all element to collection
+     *
+     * @param collection
+     */
+    fun addAllElementToCollection(collection: PriorityQueue<Route>)
+
+    /**
      * collectionToList method. Import collection to list
      *
      * @param collection

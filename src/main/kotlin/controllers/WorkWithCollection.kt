@@ -51,7 +51,7 @@ class WorkWithCollection: CollectionMainCommands {
      */
     override fun clearCollection() {
         while (!priorityQueueCollection.isEmpty()){
-            println("Объект ${priorityQueueCollection.remove()} успешно удален")
+            priorityQueueCollection.remove()
         }
     }
 
@@ -62,6 +62,15 @@ class WorkWithCollection: CollectionMainCommands {
      */
     override fun addElementToCollection(routeObject: Route) {
         priorityQueueCollection.add(routeObject)
+    }
+
+    /**
+     * addAllElementToCollection method. Add all element to collection
+     *
+     * @param collection
+     */
+    override fun addAllElementToCollection(collection: PriorityQueue<Route>) {
+        priorityQueueCollection.addAll(collection)
     }
 
     /**

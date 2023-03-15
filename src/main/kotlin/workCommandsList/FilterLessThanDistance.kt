@@ -29,8 +29,13 @@ class FilterLessThanDistance: Command() {
         if (collection.size == 0){
             workWithResultModule.setMessages("emptyCollection")
         }else if(collection.size == 1){
-            workWithResultModule.setMessages(consoleWriter.returnKeyValue("showName").toString() + collection.peek().name.toString())
-            workWithResultModule.setMessages("   " + consoleWriter.returnKeyValue("showId").toString() + collection.peek().id.toString())
+            if (collection.peek().distance < checkDistance.toString().toLong()){
+                workWithResultModule.setMessages(consoleWriter.returnKeyValue("showName").toString() + collection.peek().name.toString())
+                workWithResultModule.setMessages("   " + consoleWriter.returnKeyValue("showId").toString() + collection.peek().id.toString())
+                collection.poll()
+            }else{
+                workWithResultModule.setMessages("noResult")
+            }
         }else{
             for (i in 0..collection.size - 1){
                 if (collection.peek().distance < checkDistance.toString().toLong()){
@@ -42,6 +47,9 @@ class FilterLessThanDistance: Command() {
                 }
             }
         }
+
+        workWithCollection.clearCollection()
+        workWithCollection.addAllElementToCollection(collection)
 
         return workWithResultModule.getResultModule()
     }
