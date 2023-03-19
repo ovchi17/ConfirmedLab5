@@ -35,6 +35,7 @@ class Help: Command() {
         workWithResultModule.setMessages("helpRemoveAllByDistance")
         workWithResultModule.setMessages("helpAverageOfDistance")
         workWithResultModule.setMessages("helpFilterLessThanDistance")
+        workWithResultModule.setMessages("helpSwitchCollection")
 
         workWithResultModule.setMessages("***")
 

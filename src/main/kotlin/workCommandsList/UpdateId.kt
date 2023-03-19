@@ -31,24 +31,24 @@ class UpdateId: Command() {
         if (collection.size == 0){
             workWithResultModule.setMessages("emptyCollection")
         }else if(collection.size == 1){
-            workWithCollection.getCollection().clear()
+            workWithCollection.clearCollection()
             if (collection.peek().id == checkId){
                 val sendList = listOf("add", checkId.toString())
                 tokenizator.tokenizator(add, sendList)
 
             }else{
                 workWithResultModule.setMessages("noId")
-                workWithCollection.getCollection().add(collection.peek())
+                workWithCollection.addElementToCollection(collection.peek())
             }
         }else{
-            workWithCollection.getCollection().clear()
+            workWithCollection.clearCollection()
             for (i in 0..collection.size - 1){
                 if (collection.peek().id == checkId){
                     val sendList = listOf("add", checkId.toString())
                     tokenizator.tokenizator(add, sendList)
                     collection.poll()
                 }else{
-                    workWithCollection.getCollection().add(collection.peek())
+                    workWithCollection.addElementToCollection(collection.peek())
                     collection.poll()
                 }
             }

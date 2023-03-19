@@ -16,7 +16,10 @@ interface CollectionMainCommands {
      *
      * @return PriorityQueue collection that contains Route objects
      */
-    fun getCollection(): PriorityQueue<Route>
+
+    fun getCollection(): Collection<Route>
+
+    fun changeCollection()
 
     /**
      * clearCollection method. Clear the collection.
@@ -70,7 +73,7 @@ interface CollectionMainCommands {
      *
      * @param collection
      */
-    fun addAllElementToCollection(collection: PriorityQueue<Route>)
+    fun addAllElementToCollection(collection: Collection<Route>)
 
     /**
      * collectionToList method. Import collection to list
@@ -78,7 +81,13 @@ interface CollectionMainCommands {
      * @param collection
      * @return message as List<Route>
      */
-    fun collectionToList(collection: PriorityQueue<Route>): List<Route>
+    fun collectionToList(): List<Route>
+
+    fun pollCollection(): Route?
+
+    fun peekCollection(): Route?
+
+    fun checkCollection(): String
 
     /**
      * listToCollection method. Import list to collection

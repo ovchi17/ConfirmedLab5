@@ -43,6 +43,7 @@ class Tokenizator: KoinComponent {
         val removeAllByDistance: RemoveAllByDistance = RemoveAllByDistance()
         val averageOfDistance: AvarageOfDistance = AvarageOfDistance()
         val filterLessThanDistance: FilterLessThanDistance = FilterLessThanDistance()
+        val switch: Switch = Switch()
 
         val COMMANDS = mapOf(
             "help" to help,
@@ -60,7 +61,8 @@ class Tokenizator: KoinComponent {
             "history" to history,
             "remove_all_by_distance" to removeAllByDistance,
             "average_of_distance" to averageOfDistance,
-            "filter_less_than_distance" to filterLessThanDistance)
+            "filter_less_than_distance" to filterLessThanDistance,
+            "switch" to switch)
 
         if (command in COMMANDS) {
             return COMMANDS[command]
@@ -70,7 +72,7 @@ class Tokenizator: KoinComponent {
     }
 
 
-    val listOfNo = listOf("help", "info", "show", "clear", "save", "exit", "remove_first", "add_if_max", "history", "average_of_distance")
+    val listOfNo = listOf("help", "info", "show", "clear", "save", "exit", "remove_first", "add_if_max", "history", "average_of_distance", "switch")
     val listOfLong = listOf("update", "remove_by_id", "remove_all_by_distance", "filter_less_than_distance", "add")
     val listString = listOf("execute_script")
 

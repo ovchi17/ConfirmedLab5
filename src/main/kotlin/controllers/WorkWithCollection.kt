@@ -4,6 +4,7 @@ import java.util.PriorityQueue
 import dataSet.*
 import java.time.Instant
 import java.util.Date
+import java.util.LinkedList
 
 /**
  * WorkWithCollection class. Implements CollectionMainCommands
@@ -15,17 +16,24 @@ class WorkWithCollection: CollectionMainCommands {
 
 
     private var priorityQueueCollection = PriorityQueue<Route>(RouteComporator())
+    private var linkedListCollection = LinkedList<Route>()
     var initData = Date.from(Instant.now())
     var commandHistory:MutableList<String> = mutableListOf()
     var idManager: Long = 1;
+    var k: String = "PQ"
 
     /**
      * getCollection method. Return collection
      *
      * @return PriorityQueue<Route>
      */
-    override fun getCollection(): PriorityQueue<Route> {
-        return priorityQueueCollection
+
+    override fun getCollection(): Collection<Route> {
+        if (k == "PQ"){
+            return priorityQueueCollection
+        }else{
+            return linkedListCollection
+        }
     }
 
     /**
@@ -49,9 +57,16 @@ class WorkWithCollection: CollectionMainCommands {
      * clearCollection method. Clear collection
      *
      */
+
     override fun clearCollection() {
-        while (!priorityQueueCollection.isEmpty()){
-            priorityQueueCollection.remove()
+        if (k == "PQ"){
+            while (!priorityQueueCollection.isEmpty()){
+                priorityQueueCollection.remove()
+            }
+        }else{
+            while (!linkedListCollection.isEmpty()){
+                linkedListCollection.remove()
+            }
         }
     }
 
@@ -60,8 +75,13 @@ class WorkWithCollection: CollectionMainCommands {
      *
      * @param routeObject: Route. Element to be added
      */
+
     override fun addElementToCollection(routeObject: Route) {
-        priorityQueueCollection.add(routeObject)
+        if (k == "PQ"){
+            priorityQueueCollection.add(routeObject)
+        }else{
+            linkedListCollection.add(routeObject)
+        }
     }
 
     /**
@@ -69,8 +89,12 @@ class WorkWithCollection: CollectionMainCommands {
      *
      * @param collection
      */
-    override fun addAllElementToCollection(collection: PriorityQueue<Route>) {
-        priorityQueueCollection.addAll(collection)
+    override fun addAllElementToCollection(collection: Collection<Route>) {
+        if (k == "PQ"){
+            priorityQueueCollection.addAll(collection)
+        }else{
+            linkedListCollection.addAll(collection)
+        }
     }
 
     /**
@@ -103,14 +127,50 @@ class WorkWithCollection: CollectionMainCommands {
         return initData
     }
 
+    override fun changeCollection() {
+        if (k == "PQ"){
+            linkedListCollection.addAll(priorityQueueCollection)
+            clearCollection()
+            k = "LL"
+        }else{
+            priorityQueueCollection.addAll(linkedListCollection)
+            clearCollection()
+            k = "PQ"
+        }
+    }
+
     /**
      * collectionToList method. Convert Collection to List
      *
      * @param collection: PriorityQueue<Route>. PriorityQueue Collection that heeded to convert
      * @return priorityQueueCollection.toList(). Returns PriorityQueue Collection in List format
      */
-    override fun collectionToList(collection: PriorityQueue<Route>): List<Route> {
-        return priorityQueueCollection.toList()
+    override fun collectionToList(): List<Route> {
+        return if (k == "PQ"){
+            priorityQueueCollection.toList()
+        }else{
+            linkedListCollection.toList()
+        }
+    }
+
+    override fun pollCollection(): Route? {
+        return if (k == "PQ"){
+            priorityQueueCollection.poll()
+        }else{
+            linkedListCollection.poll()
+        }
+    }
+
+    override fun peekCollection(): Route? {
+        return if (k == "PQ"){
+            priorityQueueCollection.peek()
+        }else{
+            linkedListCollection.peek()
+        }
+    }
+
+    override fun checkCollection(): String{
+        return k
     }
 
     /**

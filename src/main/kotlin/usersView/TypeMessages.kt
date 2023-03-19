@@ -38,6 +38,7 @@ class TypeMessages {
         "helpRemoveAllByDistance" to " ** remove_all_by_distance distance : удалить из коллекции все элементы, значение поля distance которого эквивалентно заданному",
         "helpAverageOfDistance" to " ** average_of_distance : вывести среднее значение поля distance для всех элементов коллекции",
         "helpFilterLessThanDistance" to " ** filter_less_than_distance distance : вывести элементы, значение поля distance которых меньше заданного",
+        "helpSwitchCollection" to " ** switch : сменить тип коллекции",
         "historyOfCommands" to "История команд: ",
         "typeCollection" to "Тип коллекции: ",
         "sizeCollection" to "Размер коллекции: ",
@@ -51,7 +52,9 @@ class TypeMessages {
         "showId" to " Id: ",
         "noResult" to "Нет подходящих элементов ",
         "noFile" to "Файл не найден",
-        "recursion" to "Возникла рекурсия"
+        "recursion" to "Возникла рекурсия",
+        "changeToCollPQ" to "Коллекция изменена на PriorityQueue",
+        "changeToCollLL" to "Коллекция изменена на LinkedList"
     )
 
     /**

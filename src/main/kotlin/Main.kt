@@ -2,7 +2,6 @@ import controllers.*
 import dataSet.Route
 import usersView.*
 import java.io.File
-import java.io.FileReader
 import java.util.*
 import di.koinModule
 import org.koin.core.component.KoinComponent
@@ -19,31 +18,12 @@ fun main() {
     val writeToConsole: AnswerToUser = AnswerToUser()
     val workWithCollection = WorkWithCollectionHelper().returnWorkWithCollection()
     val tokenizator: Tokenizator = Tokenizator()
+    val scannerJsonFile: ScannerJsonFile = ScannerJsonFile()
 
-
+    scannerJsonFile.scanFile()
 
     writeToConsole.writeToConsoleLn("Для получения списка команд введите: help")
 
-
-    val workWithFile: WorkWithFile = WorkWithFile()
-    val pathToFile: String = System.getenv("DataOfCollection")
-    val serializer: Serializer = Serializer()
-    if (!workWithFile.checkFile(pathToFile)){
-        val list = serializer.deserialize(workWithFile.readFile(File(pathToFile)))
-        val collection: PriorityQueue<Route> = workWithCollection.listToCollection(list)
-        var maxId: Int = 0
-        for(i in list.indices){
-            if (collection.element().id > maxId){
-                maxId = collection.element().id.toInt()
-            }
-            workWithCollection.addElementToCollection(collection.toList().get(i))
-        }
-        if (workWithCollection.getId() < maxId.toLong()){
-            while(workWithCollection.getId() < maxId.toLong()){
-                workWithCollection.idPlusOne()
-            }
-        }
-    }
 
     while (true){
         writeToConsole.writeToConsole("> ")

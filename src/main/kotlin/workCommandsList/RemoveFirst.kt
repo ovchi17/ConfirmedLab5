@@ -26,7 +26,7 @@ class RemoveFirst: Command(){
         if (collection.size == 0){
             workWithResultModule.setMessages("emptyCollection")
         }else{
-            workWithCollection.getCollection().poll()
+            workWithCollection.pollCollection()
             workWithResultModule.setMessages("cleared")
         }
         return workWithResultModule.getResultModule()

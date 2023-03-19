@@ -24,7 +24,7 @@ class Save: Command() {
     override fun execute(): ResultModule {
          val collection = PriorityQueue<Route>(RouteComporator())
          collection.addAll(workWithCollection.getCollection())
-         val list = workWithCollection.collectionToList(collection)
+         val list = workWithCollection.collectionToList()
          val jsonString = serializer.serialize(list)
          workWithFile.writeToFile(collection, pathToFile, jsonString)
          workWithResultModule.setMessages("saved")

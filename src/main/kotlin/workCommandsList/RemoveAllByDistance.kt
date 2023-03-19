@@ -30,19 +30,19 @@ class RemoveAllByDistance: Command() {
             workWithResultModule.setMessages("emptyCollection")
         }else if(collection.size == 1){
             if (collection.peek().distance == checkDistance){
-                workWithCollection.getCollection().clear()
+                workWithCollection.clearCollection()
                 workWithResultModule.setMessages("cleared")
             }else{
                 workWithResultModule.setMessages("noDistance")
             }
         }else{
-            workWithCollection.getCollection().clear()
+            workWithCollection.clearCollection()
             for (i in 0..collection.size - 1){
                 if (collection.peek().distance == checkDistance){
                     collection.poll()
                     workWithResultModule.setMessages("cleared")
                 }else{
-                    workWithCollection.getCollection().add(collection.peek())
+                    workWithCollection.addElementToCollection(collection.peek())
                     collection.poll()
                 }
             }
