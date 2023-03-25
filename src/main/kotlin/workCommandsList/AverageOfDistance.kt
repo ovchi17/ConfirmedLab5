@@ -11,7 +11,7 @@ import java.util.*
  * @author jutsoNNN
  * @since 1.0.0
  */
-class AvarageOfDistance: Command() {
+class AverageOfDistance: Command() {
 
     /**
      * execute method. Returns average distance

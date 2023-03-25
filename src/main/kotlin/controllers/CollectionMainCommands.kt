@@ -78,15 +78,29 @@ interface CollectionMainCommands {
     /**
      * collectionToList method. Import collection to list
      *
-     * @param collection
      * @return message as List<Route>
      */
     fun collectionToList(): List<Route>
 
+    /**
+     * pollCollection method. Poll collection
+     *
+     * @return message as Route
+     */
     fun pollCollection(): Route?
 
+    /**
+     * peekCollection method. Peek collection
+     *
+     * @return message as Route?
+     */
     fun peekCollection(): Route?
 
+    /**
+     * checkCollection method. Returns info
+     *
+     * @return message as String
+     */
     fun checkCollection(): String
 
     /**

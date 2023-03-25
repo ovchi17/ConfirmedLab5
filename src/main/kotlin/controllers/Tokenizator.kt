@@ -41,7 +41,7 @@ class Tokenizator: KoinComponent {
         val addIfMax: AddIfMax = AddIfMax()
         val history: History = History()
         val removeAllByDistance: RemoveAllByDistance = RemoveAllByDistance()
-        val averageOfDistance: AvarageOfDistance = AvarageOfDistance()
+        val averageOfDistance: AverageOfDistance = AverageOfDistance()
         val filterLessThanDistance: FilterLessThanDistance = FilterLessThanDistance()
         val switch: Switch = Switch()
 

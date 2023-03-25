@@ -6,10 +6,20 @@ import org.koin.core.component.inject
 import java.io.File
 import java.util.*
 
+/**
+ * Class ScannerJsonFile. Scan Json File
+ *
+ * @author justoNNN
+ * @since 1.0.0
+ */
 class ScannerJsonFile: KoinComponent {
 
     val workWithCollection: CollectionMainCommands by inject()
 
+    /**
+     * scanFile method.
+     *
+     */
     fun scanFile(){
         val workWithFile: WorkWithFile = WorkWithFile()
         val pathToFile: String = System.getenv("DataOfCollection")

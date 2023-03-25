@@ -127,6 +127,10 @@ class WorkWithCollection: CollectionMainCommands {
         return initData
     }
 
+    /**
+     * changeCollection method. PQ -> LL || LL -> PQ
+     *
+     */
     override fun changeCollection() {
         if (k == "PQ"){
             linkedListCollection.addAll(priorityQueueCollection)
@@ -153,6 +157,11 @@ class WorkWithCollection: CollectionMainCommands {
         }
     }
 
+    /**
+     * pollCollection method. Poll function
+     *
+     * @return object: Route?. The date of collection init
+     */
     override fun pollCollection(): Route? {
         return if (k == "PQ"){
             priorityQueueCollection.poll()
@@ -161,6 +170,11 @@ class WorkWithCollection: CollectionMainCommands {
         }
     }
 
+    /**
+     * peekCollection method. Peek collection
+     *
+     * @return message as Route?
+     */
     override fun peekCollection(): Route? {
         return if (k == "PQ"){
             priorityQueueCollection.peek()
@@ -169,6 +183,11 @@ class WorkWithCollection: CollectionMainCommands {
         }
     }
 
+    /**
+     * checkCollection method. Returns info
+     *
+     * @return message as String
+     */
     override fun checkCollection(): String{
         return k
     }
