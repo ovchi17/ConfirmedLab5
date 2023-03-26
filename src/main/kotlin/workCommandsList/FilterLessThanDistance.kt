@@ -30,7 +30,7 @@ class FilterLessThanDistance: Command() {
             workWithResultModule.setMessages("emptyCollection")
         }else if(collection.size == 1){
             if (collection.peek().distance < checkDistance.toString().toLong()){
-                workWithResultModule.setMessages(consoleWriter.returnKeyValue("showName").toString() + collection.peek().name.toString())
+                workWithResultModule.setMessages(consoleWriter.returnKeyValue("showName").toString() + collection.peek().name)
                 workWithResultModule.setMessages("   " + consoleWriter.returnKeyValue("showId").toString() + collection.peek().id.toString())
                 collection.poll()
             }else{
@@ -39,7 +39,7 @@ class FilterLessThanDistance: Command() {
         }else{
             for (i in 0..collection.size - 1){
                 if (collection.peek().distance < checkDistance.toString().toLong()){
-                    workWithResultModule.setMessages(consoleWriter.returnKeyValue("showName").toString() + collection.peek().name.toString())
+                    workWithResultModule.setMessages(consoleWriter.returnKeyValue("showName").toString() + collection.peek().name)
                     workWithResultModule.setMessages("   " + consoleWriter.returnKeyValue("showId").toString() + collection.peek().id.toString())
                     collection.poll()
                 }else{

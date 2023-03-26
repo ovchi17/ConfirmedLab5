@@ -30,7 +30,7 @@ internal class ModuleResultTest: KoinComponent {
 
         val executeScript: ExecuteScript = ExecuteScript()
         val sendList = mutableListOf<Any>()
-        sendList.add("C:\\Users\\Akina\\IdeaProjects\\ConfirmedLab5\\src\\test\\kotlin\\commandsTest\\5.txt")
+        sendList.add("ex2.txt")
         parametrs.setParametrs(sendList)
         val getResultModule = executeScript.execute()
         println(getResultModule)

@@ -22,6 +22,7 @@ class RemoveById: Command() {
 
         val str = parametrs.getParametrs()
         val checkId = str[0]
+        var setMessageForMoreThenOne = "noId"
 
         val collection = PriorityQueue<Route>(RouteComporator())
         collection.addAll(workWithCollection.getCollection())
@@ -40,12 +41,13 @@ class RemoveById: Command() {
             for (i in 0..collection.size - 1){
                 if (collection.peek().id == checkId){
                     collection.poll()
-                    workWithResultModule.setMessages("cleared")
+                    setMessageForMoreThenOne = "cleared"
                 }else{
                     workWithCollection.addElementToCollection(collection.peek())
                     collection.poll()
                 }
             }
+            workWithResultModule.setMessages(setMessageForMoreThenOne)
         }
         return workWithResultModule.getResultModule()
     }

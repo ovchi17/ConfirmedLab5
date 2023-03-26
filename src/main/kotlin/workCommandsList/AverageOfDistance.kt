@@ -34,7 +34,7 @@ class AverageOfDistance: Command() {
                 distances += sizeCollection.get(i).distance
             }
             result = distances / sizeCollection.count().toDouble()
-            workWithResultModule.setMessages(result.toString())
+            workWithResultModule.setMessages(String.format("%.2f" ,result))
         }
         return workWithResultModule.getResultModule()
     }
