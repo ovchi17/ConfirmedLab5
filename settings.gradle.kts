@@ -1,3 +1,3 @@
 
-rootProject.name = "lbbb5"
+rootProject.name = "ConfirmedLab5"
 

@@ -1,3 +1,5 @@
+import groovy.xml.dom.DOMCategory.attributes
+import org.jetbrains.kotlin.com.intellij.openapi.vfs.StandardFileSystems.jar
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -5,6 +7,8 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
     application
     id("org.jetbrains.dokka") version "1.7.20"
+    id("com.github.johnrengelman.shadow") version "7.1.0"
+
 }
 
 group = "org.example"
@@ -35,19 +39,26 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-tasks.jar {
-    manifest {
-        attributes["Main-Class"] = "ConfirmedLab5.MainKt"
-    }
-    configurations["compileClasspath"].forEach { file: File ->
-        from(zipTree(file.absoluteFile))
-    }
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+project.setProperty("mainClassName", "MainKt")
+application {
+    mainClassName = "MainKt" // for shadow plugin
+    mainClass.set("MainKt") // + "Kt" // if main not inside class/object
 }
 
-application {
-    mainClass.set("MainKt")
-}
+
+
+//tasks.jar {
+//    manifest {
+//        attributes["Main-Class"] = "MainKt"
+//    }
+//    configurations["compileClasspath"].forEach { file: File ->
+//        from(zipTree(file.absoluteFile))
+//    }
+//    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+
+//application {
+//    mainClass.set("MainKt")
+//}
 
 subprojects {
     apply(plugin = "org.jetbrains.dokka")
